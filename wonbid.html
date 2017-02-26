@@ -2,61 +2,81 @@
 <html>
   <head>
     <title>Congratulations!</title>
+    <link rel = "stylesheet" type = "text/css" href="CSS/css.css">
   </head>
   <body>
-    <div>
-      <div><a href = "#">EasyBid</a></div>
-      <ul>
-        <li><a href = "#">Home</a></li>
-        <li><a href = "#">Bid</a></li>
-        <li><a href = "#">Sell</a></li>
-        <li><a href = "#">Account</a></li>
-        <li><a href = "#">Contact</a></li>
-      </ul>
+    <div class = "navbar">
+      <div class = "logo">
+        <img src = "logo.png" alt="logo">
+      </div>
+      <div class = "menu">
+        <ul>
+          <li><a href = "#">Contact</a></li>
+          <li><a href = "#">Account</a></li>
+          <li><a href = "#">Sell</a></li>
+          <li><a href = "#">Bid</a></li>
+          <li><a href = "#">Home</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h1>Congratulations! You have Succesfully Acquired this Item!</h1>
-      <table>
+    <div class = "container">
+      <h1>Congratulations!</h1>
+      <h1>You have Succesfully Acquired this Item!</h1>
+      <table align="center">
         <tr>
           <th colspan="3">Item 1</th>
         </tr>
         <tr>
-          <td>
-            <div><img alt = "Item 1" src = ""></div>
+          <td rowspan="4">
+            <div class = "item"><img alt = "Item 1" src = "Images/item.png"></div>
           </td>
           <td>
-            <ul>
-              <li>Item Name:</li>
-              <li>Final Bid:</li>
-              <li>Seller Username:</li>
-              <li>Payment Method:</li>
-            </ul>
+              Item Name:
           </td>
           <td>
-            <ul>
-              <li>Item 1</li>
-              <li>$500</li>
-              <li>easybidder123</li>
-              <li>Visa</li>
-            </ul>
+              Item 1
           </td>
         </tr>
         <tr>
-          <td colspan="3">Item Description</td>
+          <td>
+            Final Bid:
+          </td>
+          <td>
+            $500
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Seller Username:
+          </td>
+          <td>
+            easybidder123
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Payment Method:
+          </td>
+          <td>
+            Visa
+          </td>
+        </tr>
+        <tr>
+          <th colspan="3">Item Description</th>
         </tr>
         <tr>
           <td colspan="3">
             <pre>
-              Item Description Item Description
-              Item Description Item Description
-              Item Description Item Description
-              Item Description Item Description
+Item Description Item Description
+Item Description Item Description
+Item Description Item Description
+Item Description Item Description
             </pre>
           </td>
         </tr>
       </table>
-      <button name = "ship" type = "submit">Shipment Details</button>
-      <button name = "ret" type = "submit">Return</button>
+      <button name = "ship" type = "submit" class = "btn-def">Shipment Details</button>
+      <button name = "ret" type = "submit" class = "btn-del">Return</button>
     </div>
   </body>
 </html>

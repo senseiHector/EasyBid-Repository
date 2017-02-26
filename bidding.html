@@ -2,62 +2,87 @@
 <html>
   <head>
     <title>Bid on this Item</title>
+    <link rel = "stylesheet" type = "text/css" href="CSS/css.css">
   </head>
   <body>
-    <div>
-      <div><a href = "#">EasyBid</a></div>
-      <ul>
-        <li><a href = "#">Home</a></li>
-        <li><a href = "#">Bid</a></li>
-        <li><a href = "#">Sell</a></li>
-        <li><a href = "#">Account</a></li>
-        <li><a href = "#">Contact</a></li>
-      </ul>
+    <div class = "navbar">
+      <div class = "logo">
+        <img src = "logo.png" alt="logo">
+      </div>
+      <div class = "menu">
+        <ul>
+          <li><a href = "#">Contact</a></li>
+          <li><a href = "#">Account</a></li>
+          <li><a href = "#">Sell</a></li>
+          <li><a href = "#">Bid</a></li>
+          <li><a href = "#">Home</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
+    <div class = "container">
       <h1>Welcome to EasyBid Auctions</h1>
-      <table>
+      <table align="center">
         <tr>
           <th colspan="3">Item 1</th>
         </tr>
         <tr>
-          <td>
-            <div><img alt = "Item 1" src = ""></div>
+          <td rowspan="5">
+            <div class = "item"><img alt = "Item 1" src = "Images/item.png"></div>
           </td>
           <td>
-            <ul>
-              <li>Item Name:</li>
-              <li>Minimum Bid:</li>
-              <li>Seller Username:</li>
-              <li>Start Time:</li>
-              <li>Duration:</li>
-            </ul>
+              Item Name:
           </td>
           <td>
-            <ul>
-              <li>Item 1</li>
-              <li>$50</li>
-              <li>easybidder123</li>
-              <li>28/02/2017 17:00</li>
-              <li>5 hours</li>
-            </ul>
+              Item 1
           </td>
         </tr>
         <tr>
-          <td colspan="3">Item Description</td>
+          <td>
+            Minimum Bid:
+          </td>
+          <td>
+            $50
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Seller Username:
+          </td>
+          <td>
+            easybidder123
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Start Time:
+          </td>
+          <td>
+            28/02/2017 17:00
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Duration:
+          </td>
+          <td>
+            5 hours
+          </td>
+        </tr>
+        <tr>
+          <th colspan="3">Item Description</th>
         </tr>
         <tr>
           <td colspan="3">
             <pre>
-              Item Description Item Description
-              Item Description Item Description
-              Item Description Item Description
-              Item Description Item Description
+Item Description Item Description
+Item Description Item Description
+Item Description Item Description
+Item Description Item Description
             </pre>
           </td>
         </tr>
       </table>
-      <button name = "bid" type = "submit">Place Bid</button>
+      <button name = "bid" class = "btn-def" type = "submit">Place Bid</button>
     </div>
   </body>
 </html>
