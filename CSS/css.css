@@ -10,6 +10,11 @@ body{
   padding: 25px;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar{
   width: 100%;
   height: 50px;
