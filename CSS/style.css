@@ -141,13 +141,14 @@ text-align:center;
 margin-top:10%;
 }
 .mobile{
-	display:block;
+	display:inline-block;
+	width: 50%;
 	text-align:left;
+	float:left;
 
 }
 .options{
 	display:block;
-	text-align:right;
 }
 .form{
 	display:inline;
