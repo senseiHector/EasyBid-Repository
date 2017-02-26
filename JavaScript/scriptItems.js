@@ -1,4 +1,9 @@
-alert ("what the heck");
+
+
+$($('#descr').click(function(){
+	  $('#product').fadeIn(1000);
+ }
+ ));
 
 //Making sure the document is ready before executing jquery
 $(document).ready(function() {  
@@ -13,6 +18,8 @@ function(){
     ($('#active').attr('src',active)).animate({width:'100%'},1000);
 	
 }).mouseover($(this).animate({height:'400px'},2000));
+
+ 
 
  }); 
 
