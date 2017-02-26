@@ -1,0 +1,103 @@
+html, body{
+  margin:0;
+  height:100%;
+  background-color:#DEFBF1;
+  
+}
+
+.thumbnails img{
+  margin: auto;
+  width:100%;
+  padding-bottom:20px;
+  
+  
+}
+
+#wrapper{
+  margin:20px;
+}
+
+#active{
+	width:100%;
+  padding:0 20px 20px 20px;
+  
+}
+
+#day{
+  font-size:50px;
+  display:inline-block;
+}
+
+#hour{
+  font-size:40px;
+  display:inline-block;
+}
+
+#min{
+  font-size:30px;
+  
+}
+
+span .seconds .minutes .days .hours{
+  font-size:40px;
+  display:inline-block;
+
+}
+
+.seconds .minutes .days .hours{
+  font-size:20px;
+  display:inline-block;
+}
+.head{
+  text-decoration:underline;
+  color:#2DFF61;
+  margin: auto;
+  font-size:60px;
+}
+
+#timer{
+  font-size:40px;
+}
+
+#bidInfo{
+  padding-top:20%;
+  font-size:40px;
+}
+
+.status{
+  color:Green;
+  font-weight:bold;
+  font-style:italic;
+}
+
+#status, #start, #current, #win{
+  color:#007DFD;
+  font-weight:bold;
+
+}
+
+#product{
+  margin-top:4px;
+  border: 1px solid blue;
+  background-color: white;
+}
+#product div{
+  border-bottom: 1px solid black;
+}
+
+#product p{
+  fon-size:30px;
+  font-family:"Comic Sans" ; 
+}
+
+.descr{
+  font-style:bold;
+  margin:auto;
+  padding-bottom:10px;
+}
+
+
+
+//Syles for the count downs
+
+
