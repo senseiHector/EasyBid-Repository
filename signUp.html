@@ -4,8 +4,6 @@
 	<title>Sign Up</title>
 
 	<script type="text/javascript">
-		
-
 		//Regex expression to only allow characters a-z,A-Z and 0-9
 		//Accepts a minimum of 1 character and a maximum of 20
 		var userRegex = /^[a-zA-Z0-9_]{1,20}$/;
@@ -80,7 +78,7 @@
 			return true;
 		}
 
-		
+
 		//Function to report which error made
 		function reportError(errors)
 		{
@@ -95,9 +93,6 @@
 			//Alert the user
 			alert(prompt);
 		}
-
-			
-
 	</script>
 
 </head>
@@ -105,7 +100,7 @@
 
 
 	<!-- Create a form to accept username and login-->
-			
+
 	<form name = "userDetails" method="post" action="" onSubmit="return userValidate(this);">
 
 		<!-- Field first name -->
@@ -115,24 +110,24 @@
 		<!-- Field for lastname -->
 
 		Last Name: <input type="text" name="last_name" ><br>
-		
-		<!-- User enters email -->		
+
+		<!-- User enters email -->
 
 		Email: <input type="text" name="email" maxlength="30"> <br>
 
 		<!-- User enters username -->
 
-		
+
 		Username: <input type="text" name="username" id="username" maxlength="20" required autofocus> <br>
 
 		<!-- User enters password -->
 
 		Password: <input type="password" name="passwd"> <br>
 
-		
+
 
 		<!-- Login Button -->
-		
+
 		<input type="submit" name="login" value="Login">
 
 	</form>
