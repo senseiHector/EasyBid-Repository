@@ -2,6 +2,8 @@ body{
 	
 }
 
+
+
 .button{
 	display: inline-block;
 	background-color: white;
@@ -51,14 +53,23 @@ body{
 
 #menu{
 	/*border:1px solid gray;*/
-	padding-top: 30px;
-	padding-right: 10px;
+	position: relative;
+	z-index: 1;
+	padding-top: 6%;
+	padding-right: 1%;
 	/*background:rgb(0,0,0, 0.4);*/
 	background:rgba(0,0,0,0.8);
 	opacity: 0.95;
-	margin-top: 45px;
+	margin-top: 5%;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
+}
+
+.logo{
+	position: absolute;
+	padding-top: -3%;
+	margin-top: -4%;
+	z-index: 2;
 }
 
 
@@ -92,7 +103,7 @@ body{
 .info{
 	position: absolute;
 	font-size:30px;
-	padding-top: 35%;
+	padding-top: 40%;
 	left:3%;
 	top:30%;
 }
@@ -103,7 +114,7 @@ body{
 
 .info2{
 	position: absolute;
-	padding-top: 35%;
+	padding-top: 40%;
 	top:30%;
 	left: 40%;
 	font-size:30px;
@@ -115,7 +126,7 @@ body{
 
 .info3{
 	position: absolute;
-	padding-top:35%;
+	padding-top:40%;
 	top:30%;
 	left: 80%;
 	font-size:30px;
@@ -130,8 +141,10 @@ p{
 	font-family: monospace;
 }
 
+
 .footer{
 	/*padding-right:4%;*/
-	padding-top:80%;
+	padding-top:25%;
+	/*margin-top: 10%;*/
 	
 }
