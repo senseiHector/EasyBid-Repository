@@ -1,3 +1,13 @@
+@import "compass/css3";
+
+$unchecked-star: '\2606';
+
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: #e52;
+
+
+
 html {
     position: relative;
     min-height: 100%;
@@ -140,41 +150,77 @@ input{
 }
 
 
-/*Rating CSS */
-.rate {
-    margin:0;
+
+fieldset {
+  border: 0;
+  background: #222;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
 }
 
-.rate li {
-    list-style:none;
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
 }
 
-.hide {
-    display:none;
-}
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: $unchecked-color;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+  }
 
-.rating input[type="radio"] {
-    position:absolute;
-    filter:alpha(opacity=0);
-    -moz-opacity:0;
-    -khtml-opacity:0;
-    opacity:0;
-    cursor:pointer;
-    width:17px;
-}
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
 
-.rating span {
-    width:24px;
-    height:16px;
-    line-height:16px;
-    padding:1px 22px 1px 0;
-    background:url(stars.png) no-repeat -22px 0;
-}
-
-.rating input[type="radio"]:checked + span {
-    background-position:-22px 0;
-}
-
-.rating input[type="radio"]:checked + span ~ span {
-    background-position:0 0;
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: $unchecked-color;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: $checked-star;
+    color: $checked-color;
+    text-shadow: 0 0 1px #333;
+  }
 }
