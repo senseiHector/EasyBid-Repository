@@ -96,7 +96,15 @@ body{
 }
 .mobile{
 	display:block;
-	text-align:center;	
+	text-align:left;
+ 
+}
+.options{
+	display:block;
+	text-align:right;
+}
+.form{
+	display:inline;
 }
 
 p{
