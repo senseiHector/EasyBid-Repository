@@ -4,7 +4,7 @@ body{
 
 
 
-.button{
+.button,.logout{
 	display: inline-block;
 	background-color: white;
 	float:right;
@@ -53,20 +53,20 @@ body{
 
 #menu{
 	/*border:1px solid gray;*/
-	position: relative;
+	position: fixed;
 	z-index: 1;
 	padding-top: 6%;
-	padding-right: 1%;
+	padding-right: 100%;
 	/*background:rgb(0,0,0, 0.4);*/
 	background:rgba(0,0,0,0.8);
 	opacity: 0.95;
-	margin-top: 5%;
+	margin-top: -10%;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
 
 .logo{
-	position: absolute;
+	position: fixed;
 	padding-top: -3%;
 	margin-top: -4%;
 	z-index: 2;
@@ -75,7 +75,7 @@ body{
 
 .foo{
 	padding:2%;
-	margin-top: 15px;
+	margin-top: 5%;
 	/*margin-left:60px;
 	margin-right:20px;*/
 	max-width:590%;
@@ -99,7 +99,7 @@ body{
 	color:white;
 
 }
-<<<<<<< HEAD
+
 
 .info{
 	position: absolute;
@@ -161,9 +161,24 @@ p{
 }
 
 
-.footer{
+.logout{
 	/*padding-right:4%;*/
-	padding-top:25%;
-	/*margin-top: 10%;*/
-	
+	padding-top:-2%;
+	margin-top: -4%;
+	z-index: 2;
+}
+
+.footer{
+	/*background: rgba(128,128,128,0.4);
+	opacity: 0.95;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+	position: relative;
+	z-index: 1;
+	padding-top: 6%;
+	padding-right: 1%;
+	/*background:rgb(0,0,0, 0.4);*/
+	background:rgba(0,0,0,0.8);
+	opacity: 0.95;
+	margin-top: 35%;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
