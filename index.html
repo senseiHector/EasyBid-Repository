@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/css.css">
 
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/style1.css">
+	<script type="text/javascript" >
+
+		//Regex expression to only allow characters a-z,A-Z and 0-9
+		//Accepts a minimum of 1 character and a maximum of 20
+		var userRegex = /^[a-zA-Z0-9_]{1,20}$/;
+
+		//Function to validate user input based on conditions set
+		function userValidate(form){
+
+			//Store the username the user enters
+			var username = form.username.value;
+
+			//Store the password user enters
+			var password = form.passwd.value;
+
+			//Create an array to store the various types of errors
+			var errors = [];
+
+			//Test the username input against the Regex for username
+			//Store the error message
+			if(!userRegex.test(username)){
+				errors[errors.length] = "Username Characters can only include 0-9, a-z and an underscore.";
+			}
+
+			//Check if username has entered a password
+			if(password.length=== 0)
+			{
+				errors[errors.length] = "Please enter a password";
+			}
+
+			//If no errors alert user login was succeful
+			if(errors.length <=0){
+				alert("Login Succesful");
+				window.open("home.html");
+			}
+
+			//If an error is found output which error it is
+			if(errors.length > 0){
+				reportError(errors);
+				return false;
+			}
+			return true;
+		}
+
+
+		//Function to report which error made
+		function reportError(errors)
+		{
+			//Store the message to be output indicating what error is present
+			var prompt = "Errors";
+
+			//Loop through the errors array and print the respective error
+			for (var i =0; i< errors.length; i++) {
+				var numError = i +1 ;
+				prompt += "\n" + numError + ". " + errors[i];
+			}
+			//Alert the user
+			alert(prompt);
+		}
+	</script>
+
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <img class="logo" width="9%" height="22%" src="Images/logo.png">
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">HOME</a></li>
-        <li><a href="">SELL</a></li>
-        <li><a href="#tour">BUY</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="login.html">LOGOUT</a></li>
-    </div>
-  </div>
-</nav>
+	<!-- Insert logo of the page -->
 
-<div id="slide" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="slide"></li>
-      <li data-target="slide"></li>
-      <li data-target="slide"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="Images/marilyn Monroe.jpg" width="1200" height="700">
-        <div class="carousel-caption">
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="Images/new.jpg" alt="Chicago" width="1200" height="700">
-        <div class="carousel-caption">
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="Images/Ea$y.jpg" alt="Los Angeles" width="1200" height="700">
-        <div class="carousel-caption">
-        </div>
-      </div>
-    </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>1000+</h3>
-      <p>Accessories to purchase from a variety of certified and authorized sellers</p>
-
-    </div>
-    <div class="col-sm-4">
-      <h3>Guaranteed!</h3>
-      <p>Fraud is now a thing of the past.</p>
-      <p>Ea$yBid is the new safe way to aution and buy items </p>
-    </div>
-    <div class="col-sm-4">
-      <h3>15000+</h3>
-      <p>Since our operation, every customer has been more than satisfied</p>
-
-    </div>
-  </div>
-</div>
+	<div>
+	<img src="Images/Logo.png" style="position: relative; top: 150px; padding-bottom: 100px; height: 150px; width: 200px">
+	</div>
 
 
+	<div align="center" style="padding-top: 100px; left: 45%">
+	<!-- Create a form to accept username and login-->
 
-<!-- Footer -->
-<footer class="text-center">
-  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <p>Time is a-running</p>
-</footer>
+	<form align="center" name = "userDetails" method="post" action="" onSubmit="return userValidate(this);">
+
+		<!-- User enters username -->
 
 
- <script type="text/javascript" src="script.js"></script>
+		<p> Username: <input type="text" name="username" id="username" maxlength="20" required autofocus></p> <br>
 
+		<!-- User enters password -->
+
+		<p> Password: <input type="password" name="passwd"></p> <br>
+
+		<!-- Login Button -->
+
+
+		<button type="submit" class = "btn-def">Login</button>
+
+		<button type="button" class = "btn-def">
+		<a href="signUp.html"> Sign Up</a>
+		</button>
+
+	</form>
+
+	</div>
+	<footer class="foot">
+    <p>Time is a-running</p>
+  </footer>
 </body>
 </html>
