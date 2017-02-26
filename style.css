@@ -99,6 +99,7 @@ body{
 	color:white;
 
 }
+<<<<<<< HEAD
 
 .info{
 	position: absolute;
@@ -136,6 +137,24 @@ body{
 	font-size:16px;
 }
 
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+.mobile{
+	display:block;
+	text-align:left;
+ 
+}
+.options{
+	display:block;
+	text-align:right;
+}
+.form{
+	display:inline;
+}
 
 p{
 	font-family: monospace;

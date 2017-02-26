@@ -1,5 +1,5 @@
 body{
-	background-color: blue;
+	background-color: rgb(26,153,252);
 }
 
 .button {
@@ -12,3 +12,12 @@ body{
 p{
 	font-family: monospace;
 }
+<<<<<<< HEAD
+=======
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+>>>>>>> 7a4c8b5657543ec19392ecf1977dab0198608f7b
