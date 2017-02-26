@@ -12,9 +12,3 @@ body{
 p{
 	font-family: monospace;
 }
-.box__dragndrop,
-.box__uploading,
-.box__success,
-.box__error {
-  display: none;
-}

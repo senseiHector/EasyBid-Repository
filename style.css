@@ -88,7 +88,16 @@ body{
 	color:white;
 
 }
-
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+.mobile{
+	display:block;
+	text-align:center;	
+}
 
 p{
 	font-family: monospace;
