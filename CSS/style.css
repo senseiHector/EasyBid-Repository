@@ -1,8 +1,6 @@
 body{
-	background-color: rgb(26,153,252);
+
 }
-
-
 
 .button,.logout{
 	display: inline-block;
@@ -137,11 +135,10 @@ body{
 	font-size:16px;
 }
 
-.box__dragndrop,
-.box__uploading,
-.box__success,
-.box__error {
-  display: none;
+.box,
+.box-file{
+text-align:center;
+margin-top:10%;
 }
 .mobile{
 	display:block;

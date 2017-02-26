@@ -1,16 +1,42 @@
 <html>
 	<head>
-		<title>Ea$yBid</title>
-		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<title>sellerUpload</title>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <link rel="stylesheet" type="text/css" href="CSS/style1.css">
+		  <link rel="stylesheet" type="text/css" href="CSS/style.css">
 	</head>
 	<body>
+				<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <img class="logo" width="9%" height="22%" src="Images/logo.png">
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="#myPage">HOME</a></li>
+				<li><a href="">SELL</a></li>
+				<li><a href="#tour">BUY</a></li>
+				<li><a href="#">CONTACT</a></li>
+				<li><a href="login.html">LOGOUT</a></li>
+			</div>
+		  </div>
+		</nav>
 
 		<form class="box" method="post" action="" enctype="multipart/form-data">
 		  <div class="box__input">
 		  To choose the image of the item to upload check below:<br><br>
 			<input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-			<label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-			<button class="box__button" type="submit">Upload</button>
 		  </div>
 
 		  <br><br>
@@ -21,9 +47,17 @@
 
 
 		</form>
-		<div class="footer">
-		<button class="button">Logout</button>
-	    </div>
+		
+		<!-- Footer -->
+		<footer class="text-center">
+		  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		  </a><br><br>
+		  <p>Time is a-running</p>
+		</footer>
+
+
+ <script type="text/javascript" src="script.js"></script>
 
 
 	</body>
