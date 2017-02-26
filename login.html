@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/javascript" >
-		
+
 		//Regex expression to only allow characters a-z,A-Z and 0-9
 		//Accepts a minimum of 1 character and a maximum of 20
 		var userRegex = /^[a-zA-Z0-9_]{1,20}$/;
@@ -47,7 +47,7 @@
 			return true;
 		}
 
-		
+
 		//Function to report which error made
 		function reportError(errors)
 		{
@@ -69,15 +69,15 @@
 
 	<!-- Insert logo of the page -->
 
-	<img src="Logo.png">
+	<img src="Images/Logo.png">
 
 	<!-- Create a form to accept username and login-->
-			
+
 	<form name = "userDetails" method="post" action="" onSubmit="return userValidate(this);">
 
 		<!-- User enters username -->
 
-		
+
 		<p> Username: <input type="text" name="username" id="username" maxlength="20" required autofocus></p> <br>
 
 		<!-- User enters password -->
@@ -85,13 +85,13 @@
 		<p> Password: <input type="password" name="passwd"></p> <br>
 
 		<!-- Login Button -->
-		
 
-		<button type="submit">Login</button> 
+
+		<button type="submit">Login</button>
 
 		<button type="button">
 		<a href="signUp.html"> Sign Up</a>
-		</button> 
+		</button>
 
 	</form>
 
