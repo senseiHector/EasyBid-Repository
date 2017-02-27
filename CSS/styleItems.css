@@ -1,8 +1,17 @@
+#mobo a{
+  width:100%;
+}
 
-#mobo a {
+#banks a{
+  width:100%;
+}
+
+
+/*
+#mobo .1 {
   margin:auto;
   width:20%;
-  padding:10px;
+  padding:30px;
   display:inline;
 }
 
@@ -12,7 +21,7 @@
   padding:30px;
   display:inline;
 }
-
+*/
 
 .thumbnails img{
   margin: auto;
