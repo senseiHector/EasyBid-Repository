@@ -5,6 +5,10 @@ html, body{
   
 }
 
+#mobo img{
+  margin:auto;
+  width:60%;
+}
 .thumbnails img{
   margin: auto;
   width:45%;
