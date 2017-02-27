@@ -5,10 +5,19 @@ html, body{
   
 }
 
-#mobo img{
+#mobo a {
   margin:auto;
-  width:60%;
+  width:20%;
+  padding:10px;
 }
+
+#banks a{
+  margin:auto;
+  width:20%;
+  padding:10px;
+}
+
+
 .thumbnails img{
   margin: auto;
   width:45%;
