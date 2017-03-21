@@ -15,6 +15,7 @@ function(){
 	
     $('#active').css('width','100px');
 	var active=$(this).attr('src');
+	$('#active').focus();
     ($('#active').attr('src',active)).animate({width:'100%'},1000);
 	
 }).mouseover($(this).animate({height:'400px'},2000));
