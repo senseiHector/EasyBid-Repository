@@ -31,14 +31,14 @@
 
 .thumbnails{
   width:90%;
-margin:auto;  
+  margin:auto;
 }
 
 .other img{
   margin: auto;
   width:100%;
   padding:10px;
-  
+
 }
 #wrapper{
   margin:20px;
@@ -47,7 +47,7 @@ margin:auto;
 #active{
 	width:100%;
   padding:0 20px 20px 20px;
-  
+
 }
 
 #day{
@@ -62,7 +62,7 @@ margin:auto;
 
 #min{
   font-size:30px;
-  
+
 }
 
 span .seconds .minutes .days .hours{
@@ -90,7 +90,7 @@ span .seconds .minutes .days .hours{
   padding-top:20%;
   margin:20px;
   font-size:40px;
- 
+
 }
 
 .status{
@@ -117,7 +117,7 @@ span .seconds .minutes .days .hours{
 
 #product p{
   fon-size:30px;
-  font-family:"Comic Sans" ; 
+  font-family:"Comic Sans" ;
 }
 
 .descr{
@@ -129,5 +129,3 @@ span .seconds .minutes .days .hours{
 
 
 //Syles for the count downs
-
-
