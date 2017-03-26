@@ -1,4 +1,4 @@
-var slide =0;
+var slide = 0;
 carousel();
 
 function carousel(){
