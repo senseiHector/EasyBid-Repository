@@ -12,6 +12,13 @@
   </head>
   <body style = "padding-top: 50px; padding-bottom: 100px;">
 
+  <?php
+
+    include("../unsecure/processunsecure.php");
+    
+
+  ?>
+
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -88,7 +95,7 @@
                 <div class="caption">
                   <h3>Item 1</h3>
                   <p>Item Description</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
+                  <p><a href="bidding.html" class="btn btn-primary" role="button">Place Bid</a></p>
                 </div>
               </div>
       		  </div>
