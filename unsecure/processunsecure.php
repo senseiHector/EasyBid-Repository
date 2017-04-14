@@ -1,4 +1,6 @@
 <?php
+
+ require_once("../database/dbconnection.php");
   $email = $username = $password = $firstname = $lastname = $gender =
   $email_err = $email_error = $username_err = $password_error = $password_err =
   $firstname_err = $lastname_err = $gender_err =  $userStat = $emailStat =
@@ -92,11 +94,33 @@
     $GLOBALS['major'] = isset($_POST['majorSelect'])? clean($_POST['majorSelect']):"";
     if(empty($GLOBALS['major'])){
       $GLOBALS['major_err'] = " *required";
-      $valid = falsex;
+      $valid = false;
     }
 
     if($valid){
       register();
+    }
+  }
+
+  if(isset($_POST['submit'])){
+    searchDatabase();
+  }
+
+  function searchDatabase(){
+    /**
+    * Searching database for items with same name
+    **/
+    
+    $search = $_REQUEST['search'];
+    
+    $statement = "SELECT * FROM items WHERE item_name = '$search' ";
+    $connect = new connect;
+    $result = $connect-> query($statement);
+    if($result > 0){
+      echo "Item found";
+    }
+    else{
+      echo "no such items exit";
     }
   }
 ?>
