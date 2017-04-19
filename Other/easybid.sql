@@ -35,7 +35,33 @@ CREATE TABLE transactions(
   auctioneer_id INTEGER,
   item_id INTEGER,
   transaction_status SET('ongoing','completed'),
-  FOREIGN KEY (bidder_id) REFERENCES users(user_id), 
+  FOREIGN KEY (bidder_id) REFERENCES users(user_id),
   FOREIGN KEY (auctioneer_id) REFERENCES users(user_id),
   FOREIGN KEY (item_id) REFERENCES items(item_id)
+);
+
+/*Payment Options Table*/
+CREATE TABLE payment_options(
+  option_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  option_name VARCHAR(50)
+);
+
+/*User Payment Options Table*/
+CREATE TABLE user_payment_options(
+  user_option_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  option_id INTEGER,
+  user_id INTEGER,
+  FOREIGN KEY (option_id) REFERENCES payment_options(option_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+/*Ratings Table*/
+CREATE TABLE ratings(
+  rating_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  bidder_id INTEGER,
+  auctioneer_id INTEGER,
+  rating INTEGER,
+  comments VARCHAR(1024),
+  FOREIGN KEY (bidder_id) REFERENCES users(user_id),
+  FOREIGN KEY (auctioneer_id) REFERENCES users(user_id)
 );
