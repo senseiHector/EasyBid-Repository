@@ -36,6 +36,11 @@
     function close(){
       mysqli_close($this->connection);
     }
+
+    function fetch(){
+      mysqli_fetch_assoc(this->connection);
+    }
+
   }
 
 ?>
