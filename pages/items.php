@@ -185,7 +185,7 @@
                 <div class="caption">
                   <h3>Item 9</h3>
                   <p>Item Description</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
+                  <p><a href="placebid.php" class="btn btn-primary" role="button">Place Bid</a></p>
                 </div>
               </div>
       		  </div>
