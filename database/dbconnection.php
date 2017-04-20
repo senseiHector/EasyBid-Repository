@@ -13,9 +13,21 @@
     }
 
     function query($sql){
-      $result = mysqli_query($this->connection,$sql);
-      return $result;
-    }
+		if(!$this->connect()){
+				return false;
+			}else{
+				//Run the query
+				$dbresults = mysqli_query($this->connection,$sql);
+				//check if record returned
+				if($dbresults==false){
+					//return !($this->dbresults==false)
+					return false;					
+				}else{
+					return true;					
+				}
+      //return $dbresult;
+      }
+	}
 
     function get_id(){
       return mysqli_insert_id($this->connection);
