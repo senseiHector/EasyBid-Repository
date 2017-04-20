@@ -116,8 +116,11 @@
     $statement = "SELECT * FROM items WHERE item_name = '$search' ";
     $connect = new connect;
     $result = $connect-> query($statement);
-    if($result > 0){
-      echo "Item found";
+    //fetch the array
+    if($results){
+      while($row = $connect -> fetch()){
+        echo "Item found";
+      }
     }
     else{
       echo "no such items exit";
