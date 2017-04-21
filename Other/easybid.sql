@@ -48,8 +48,23 @@ CREATE TABLE `items` (
 
 CREATE TABLE `payment_options` (
   `option_id` int(11) NOT NULL,
-  `option_name` varchar(50) DEFAULT NULL
+  `option_name` varchar(50) DEFAULT NULL,
+  `subscriber` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment_options`
+--
+
+INSERT INTO `payment_options` (`option_id`, `option_name`, `subscriber`) VALUES
+(1, 'Mobile Money', 'Tigo'),
+(2, 'Credit Cards', 'Mastercard'),
+(3, 'Mobile Money', 'Airtel'),
+(4, 'Mobile Money', 'MTN'),
+(5, 'Mobile Money', 'vodafone'),
+(6, 'Credit Cards', 'American Express'),
+(7, 'Credit Cards', 'Paypal'),
+(8, 'Credit Cards', 'Visa');
 
 -- --------------------------------------------------------
 
@@ -178,7 +193,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `payment_options`
 --
 ALTER TABLE `payment_options`
-  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `ratings`
 --

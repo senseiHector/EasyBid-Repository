@@ -37,7 +37,7 @@
 				 <ul class="nav navbar-nav navbar-right">
 					 <li><a href="home.html">Home</a></li>
 					 <li><a href="items.html">Buy</a></li>
-					 <li><a href="sellerUpload.html">Sell</a></li>
+					 <li><a href="sellerUpload.php">Sell</a></li>
 					 <li><a href="account.html">Account</a></li>
 					 <li><a href="../index.html">Logout</a></li>
 				 </ul>
