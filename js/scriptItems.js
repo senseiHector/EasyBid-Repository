@@ -50,8 +50,10 @@ $(document).ready(function () {
 			//Showing the clicked image
 			var active = $(this).attr('src');
 			var id = $(this).attr('id');
+
 			($('#active').attr({
 				'src': active,
+				'class': id,
 			})).animate({
 				width: '100%'
 			}, 1000);
