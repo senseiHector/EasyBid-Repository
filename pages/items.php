@@ -36,11 +36,11 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="home.html">Home</a></li>
+          <li><a href="home.php">Home</a></li>
           <li class = "active"><a href="#">Buy</a></li>
-          <li><a href="sellerUpload.html">Sell</a></li>
-          <li><a href="account.html">Account</a></li>
-          <li><a href="../index.html">Logout</a></li>
+          <li><a href="sellerUpload.php">Sell</a></li>
+          <li><a href="account.php">Account</a></li>
+          <li><a href="../index.php">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -84,7 +84,7 @@
           <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/1a.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/1a.jpg"></a>
                 <div class="caption">
                   <h3>Item 1</h3>
                   <p>Item Description</p>
@@ -95,7 +95,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/1b.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/1b.jpg"></a>
                 <div class="caption">
                   <h3>Item 2</h3>
                   <p>Item Description</p>
@@ -106,7 +106,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/2.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/2.jpg"></a>
                 <div class="caption">
                   <h3>Item 3</h3>
                   <p>Item Description</p>
@@ -117,7 +117,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/3.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/3.jpg"></a>
                 <div class="caption">
                   <h3>Item 4</h3>
                   <p>Item Description</p>
@@ -128,7 +128,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/4.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/4.jpg"></a>
                 <div class="caption">
                   <h3>Item 5</h3>
                   <p>Item Description</p>
@@ -139,7 +139,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/5.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/5.jpg"></a>
                 <div class="caption">
                   <h3>Item 6</h3>
                   <p>Item Description</p>
@@ -152,7 +152,7 @@
           <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/1a.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/1a.jpg"></a>
                 <div class="caption">
                   <h3>Item 7</h3>
                   <p>Item Description</p>
@@ -163,7 +163,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/1b.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/1b.jpg"></a>
                 <div class="caption">
                   <h3>Item 8</h3>
                   <p>Item Description</p>
@@ -174,7 +174,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/2.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/2.jpg"></a>
                 <div class="caption">
                   <h3>Item 9</h3>
                   <p>Item Description</p>
@@ -185,7 +185,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/3.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/3.jpg"></a>
                 <div class="caption">
                   <h3>Item 10</h3>
                   <p>Item Description</p>
@@ -196,7 +196,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/4.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/4.jpg"></a>
                 <div class="caption">
                   <h3>Item 11</h3>
                   <p>Item Description</p>
@@ -207,7 +207,7 @@
 
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
               <div class="thumbnail">
-                <a href= "paymentOptions.html"><img class="img" src="../image/items/5.jpg"></a>
+                <a href= "paymentOptions.php"><img class="img" src="../image/items/5.jpg"></a>
                 <div class="caption">
                   <h3>Item 12</h3>
                   <p>Item Description</p>
