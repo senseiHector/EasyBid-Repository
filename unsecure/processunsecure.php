@@ -11,7 +11,8 @@
   }
   elseif(isset($_POST['register'])){
     validRegistry();
-  }else if(isset($_POST["upload"])){
+  }
+  if(isset($_POST["upload"])){
 		insertnewselleritem();
 	}
 
