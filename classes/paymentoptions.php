@@ -17,8 +17,12 @@
   *@param userid
   *@param paymentOption
   **/
-  public function insertnewpaymentOption(){
-	  $sql="INSERT into ";
+  public function insertnewpaymentOption($optionName){
+	  //The sql
+	  $sql="INSERT into payment_options values('$optionName')";
+	  
+	  //write the query
+	  $this->query($sql);
 	  
   }
  /**
@@ -26,9 +30,16 @@
   *@param userid
   *@param paymentOption
   **/
-  public function changepaymentOption(){
+  public function changepaymentOption($optionName){
+	  //The sql
+	  $sql="UPDATE payment_options WHERE option_name='$optionName'";
 	  
+	  //write the query
+	  $this->query($sql);
   }
  }
+ 
+ $db= new paymentOption();
+ $db->insertnewpaymentOption("mastercard");
   
   ?>

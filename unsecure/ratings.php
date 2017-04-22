@@ -1,6 +1,15 @@
 <?php
 
 require_once("../databasse/dbconnection.php");
-s
 
+function sellerPerformance(){
+	
+	//connect to database
+	$db = new connect;
+
+}
+
+function sitePerformance(){
+
+}
 ?>
