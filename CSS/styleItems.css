@@ -1,131 +1,117 @@
-#mobo a{
-  width:100%;
+#mobo a {
+  width: 100%;
 }
 
-#banks a{
-  width:100%;
+#banks a {
+  width: 100%;
 }
 
-
-/*
-#mobo .1 {
-  margin:auto;
-  width:20%;
-  padding:30px;
-  display:inline;
+h3 {
+  font-family: 'Times New Romans';
+  color: blue;
 }
 
-#banks .1{
-  margin:auto;
-  width:20%;
-  padding:30px;
-  display:inline;
-}
-*/
-
-.thumbnails img{
+.thumbnails img {
   margin: auto;
-  width:45%;
-  padding:20px;
+  width: 45%;
+  padding: 20px;
 }
 
-.thumbnails{
-  width:90%;
-  margin:auto;
-}
-
-.other img{
+.thumbnails {
+  width: 90%;
   margin: auto;
-  width:100%;
-  padding:10px;
-
-}
-#wrapper{
-  margin:20px;
 }
 
-#active{
-	width:100%;
-  padding:0 20px 20px 20px;
-
-}
-
-#day{
-  font-size:50px;
-  display:inline-block;
-}
-
-#hour{
-  font-size:40px;
-  display:inline-block;
-}
-
-#min{
-  font-size:30px;
-
-}
-
-span .seconds .minutes .days .hours{
-  font-size:40px;
-  display:inline-block;
-
-}
-
-.seconds .minutes .days .hours{
-  font-size:20px;
-  display:inline-block;
-}
-.head{
-  text-decoration:underline;
-  color:#2DFF61;
+.other img {
   margin: auto;
-  font-size:60px;
+  width: 100%;
+  padding: 10px;
 }
 
-#timer{
-  font-size:40px;
+#wrapper {
+  margin: 20px;
 }
 
-#bidInfo{
-  padding-top:20%;
-  margin:20px;
-  font-size:40px;
-
+#active {
+  width: 100%;
+  padding: 0 20px 20px 20px;
 }
 
-.status{
-  color:Green;
-  font-weight:bold;
-  font-style:italic;
+#day {
+  font-size: 50px;
+  display: inline-block;
 }
 
-#status, #start, #current, #win{
-  color:#007DFD;
-  font-weight:bold;
-
+#hour {
+  font-size: 40px;
+  display: inline-block;
 }
 
-#product{
-  margin-top:4px;
+#min {
+  font-size: 30px;
+}
+
+span .seconds .minutes .days .hours {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.seconds .minutes .days .hours {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.head {
+  text-decoration: underline;
+  color: #2DFF61;
+  margin: auto;
+  font-size: 60px;
+}
+
+#timer {
+  font-size: 40px;
+}
+
+#bidInfo {
+  padding-top: 20%;
+  margin: 20px;
+  font-size: 40px;
+}
+
+.status {
+  color: Green;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#status,
+#start,
+#current,
+#win {
+  color: #007DFD;
+  font-weight: bold;
+}
+
+#product {
+  margin-top: 4px;
   border: 1px solid blue;
   background-color: white;
-   display:none;
+  display: none;
 }
-#product div{
+
+#product div {
   border-bottom: 1px solid black;
 }
 
-#product p{
-  fon-size:30px;
-  font-family:"Comic Sans" ;
+#product p {
+  fon-size: 30px;
+  font-family: "Comic Sans";
 }
 
-.descr{
-  font-style:bold;
-  margin:auto;
-  padding-bottom:10px;
+.descr {
+  font-style: bold;
+  margin: auto;
+  padding-bottom: 10px;
 }
-
-
 
 //Syles for the count downs

@@ -35,11 +35,11 @@
 					 <button type="submit" class="btn btn-default">Submit</button>
 				 </form>
 				 <ul class="nav navbar-nav navbar-right">
-					 <li><a href="home.html">Home</a></li>
-					 <li><a href="items.html">Buy</a></li>
+					 <li><a href="home.php">Home</a></li>
+					 <li><a href="items.php">Buy</a></li>
 					 <li><a href="sellerUpload.php">Sell</a></li>
-					 <li><a href="account.html">Account</a></li>
-					 <li><a href="../index.html">Logout</a></li>
+					 <li><a href="account.php">Account</a></li>
+					 <li><a href="../index.php">Logout</a></li>
 				 </ul>
 			 </div>
 		 </div>
@@ -55,7 +55,7 @@
           <h3 class = "text-center">Mobile Money</h3>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-						    <a href="bidding.html">
+						    <a href="bidding.php">
 						      <img src="../image/airtelmoney.jpg" alt="Airtel Money">
 						    </a>
 						  <div class="caption">
@@ -65,7 +65,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-						    <a href="bidding.html">
+						    <a href="bidding.php">
 						      <img src="../image/mtn.jpg" alt="MTN">
 						    </a>
 						  <div class="caption">
@@ -75,7 +75,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/togo.jpg" alt="Tigo">
 					    </a>
 						  <div class="caption">
@@ -85,7 +85,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/vodafone.jpg" alt="Vodafone Cash">
 					    </a>
 						  <div class="caption">
@@ -98,7 +98,7 @@
 					<h3 class = "text-center">Credit Cards</h3>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/visa.png" alt="Visa">
 					    </a>
 						  <div class="caption">
@@ -108,7 +108,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/mastercard.png" alt="Mastercard">
 					    </a>
 						  <div class="caption">
@@ -118,7 +118,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/american.jpg" alt="American Express">
 					    </a>
 						  <div class="caption">
@@ -128,7 +128,7 @@
 					</div>
 					<div class = "col-lg-3 col-md-3">
 						<div class="thumbnail">
-					    <a href="bidding.html">
+					    <a href="bidding.php">
 					      <img src="../image/paypal.png" alt="Paypal">
 					    </a>
 						  <div class="caption">

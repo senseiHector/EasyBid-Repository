@@ -32,10 +32,25 @@ function validLogin(){
     $GLOBALS['username_err'] = " *required";
     $valid = false;
   }
+<<<<<<< HEAD
   $GLOBALS['password'] = isset($_POST['passwd'])? $_POST['passwd']:"";
   if(empty($GLOBALS['password'])){
     $GLOBALS['password_err'] = " *required";
     $valid = false;
+=======
+  elseif(isset($_POST['register'])){
+    validRegistry();
+  }
+  if(isset($_POST["upload"])){
+		insertnewselleritem();
+	}
+
+  function clean($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+>>>>>>> 4263edc20c0511ae2b244463287c4ea4008d64da
   }
 
   if($valid){
