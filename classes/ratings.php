@@ -40,7 +40,7 @@ else{
 	else{
 		echo "Kindly rate this seller";
 	}
-	$exec = $db->preStatement($rate, $comment);
+
 
 }
 	
