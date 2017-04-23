@@ -15,6 +15,7 @@ $userID=$_SESSION['user_id'];
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style = "padding-top: 50px; padding-bottom: 150px;">
+	<?php include("../layout/standardheader.php"); ?>
 	<div class = "container">
 		<div class = "row">
 			<div class="panel panel-default col-md-4 col-md-offset-4">

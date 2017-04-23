@@ -12,63 +12,22 @@
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
   <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" style = "padding:0" href="home.php">
-          <img src="../image/rsz_logo.png" alt="EasyBid Logo">
-        </a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="home.php">Home</a></li>
-          <li><a href="items.php">Buy</a></li>
-          <li><a href="sellerUpload.php">Sell</a></li>
-          <li><a href="account.php">Account</a></li>
-          <li><a href="../index.php">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    </nav>
-
+    <?php include("../layout/standardheader.php"); session_start();?>
     <br><br>
     <div class = "container">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h2>Bid Begins In: </h2>
-          <pre>Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
+          <h2 id = "start_end"></h2>
+          <pre id = "countdown_pre">Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
         </div>
       </div>
       <div class = "row">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-              <div class="caption">
-                  <h3 id="item_name">Item 1</h3>
-                  <p id="descr">Item Description</p>
-                  <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
-                </div>
-
-        </div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
           <img id="active">
 				</div>
 
 
-        <div class="panel panel-default col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="panel panel-default col-lg-7 col-md-7 col-sm-7 col-xs-7">
           <div class="panel-body">
             <div class = "row">
               <div class = "table-responsive">
@@ -79,6 +38,9 @@
                   </tbody>
                 </table>
               </div>
+              <div>
+                <h2 class="text-center" id="current_highest"></h2>
+              </div>
             </div>
             <div class = "row">
               <h3>Item Description</h3>
@@ -86,23 +48,39 @@
               </p>
             </div>
             <div class = "row">
-              <a href = "wonbid.php" class = "btn btn-primary">Place Bid</a>
+              <button type="button" id="bid_btn" class="btn btn-primary" data-toggle="modal" data-target="#bid_modal"/>Place Bid</button>
               <a href = "items.php" class = "btn btn-danger">Return</a>
             </div>
           </div>
         </div>
       </div>
 
-      <br>
-      <hr>
-      <br>
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class = "text-center">Related Items</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <?php showitemsb($database);?>
+    </div>
+
+    <div class="modal fade" id="bid_modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title text-center">Place New Bid</h4>
+          </div>
+          <div class="modal-body">
+            <form method = "post" action="../controller/bid_controller.php">
+              <div class="text-center">
+                <span id="current_bid"></span>
+              </div>
+              <div class="form-group">
+                <label for="your_bid">Your Bid</label>
+                <input type="number" class="form-control" name="your_bid" id="your_bid"
+                maxlength="20" placeholder="Your Bid" autofocus>
+              </div>
+              <input hidden name="item_id" value="<?php echo $_GET['id']; ?>"/>
+              <input hidden name="bidder_id" value="<?php echo $_SESSION['user_id']; ?>"/>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="submit" name="bid_mod" class="btn btn-primary">Place Bid</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -117,9 +95,9 @@
     </nav>
 
     <!--javascript-->
-<script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bid_ajax.js"></script>
-    <script src="../js/scriptItems.js"></script>
+    <!-- <script src="../js/scriptItems.js"></script> -->
   </body>
 </html>
