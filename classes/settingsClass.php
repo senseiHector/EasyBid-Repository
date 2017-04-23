@@ -5,7 +5,7 @@ class modifyDetails extends DBconnection
 	public function loadFirstName()
 	{
 		$this->connection();
-		$sql = "SELECT fname FROM usertable WHERE userid=$useid";
+		$sql = "SELECT firstname FROM users WHERE user_id=$userID";
 		$this->query($sql);
 		while ($name = $this->fetch())
 		{
