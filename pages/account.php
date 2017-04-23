@@ -12,7 +12,7 @@
 
   </head>
   <!--Body-->
-  <body style = "padding-top: 60px; padding-bottom: 150px;">
+  <body onload="loadUser(<?php session_start();echo $_SESSION['user_id'];?>)" style = "padding-top: 60px; padding-bottom: 150px;">
     <!--Navbar and Header-->
     <?php include("../layout/standardheader.php"); ?>
 
@@ -26,17 +26,10 @@
               <div class="thumbnail">
                 <a href= "paymentOptions.html"><img class="img" src="../image/man.png"></a>
               </div>
-              <h3>User 1</h3>
-              <p>
-                User Info User Info User Info</br>
-                User Info User Info User Info</br>
-                User Info User Info User Info</br>
-                User Info User Info User Info</br>
+              <h3 id="user_full"></h3>
+              <p id="user_info">
               </p>
               <p><a href="settings.php" class="btn btn-primary" role="button">Edit Account Info</a></p>
-            </div>
-            <div class="row">
-              <h3>User Rating</h3>
             </div>
             </br>
             </br>
@@ -138,5 +131,6 @@
     <!--javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/user_ajax.js"></script>
   </body>
 </html>
