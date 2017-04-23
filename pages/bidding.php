@@ -53,7 +53,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Bid Begins In: </h2>
-          <pre>Days:     Hrs:     Mins:     Secs:    </pre>
+          <pre>Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
         </div>
       </div>
       <div class = "row">

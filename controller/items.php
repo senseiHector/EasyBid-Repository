@@ -17,7 +17,7 @@ function showitems($database)
 {
     
  // making sure that the information gotten are secure and then querying the informations.
-    $sql= "SELECT * FROM items";
+    $sql= "SELECT item_id, item_name, icon_url FROM items";
     $result=$database->query($sql)->fetch_all(MYSQLI_ASSOC);
 
     $num=0;
@@ -50,7 +50,7 @@ function showitemsb($database)
     
 
 // making sure that the information gotten are secure and then querying the informations.
-    $sql= "SELECT * FROM items";
+    $sql= "SELECT item_id, item_name, icon_url FROM items";
     $result=$database->query($sql)->fetch_all(MYSQLI_ASSOC);
 
     $num=0;
