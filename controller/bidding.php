@@ -12,6 +12,8 @@ include("../database/dbconnection.php");
  //connecting to the database
  $database->connect();
 
+
+
  // making sure that the information gotten are secure and then querying the informations.
  $id=$_POST['itid'];
  $sql= "SELECT * FROM items WHERE item_id='$id'";
