@@ -66,7 +66,11 @@
 
         </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-         <img id="active" class=<?php echo $_GET['id'];  ?> src=<?php echo $_GET['s'];  ?>  alt="Ghana made bags">
+         <img id="active" class='<?php if (isset($_GET['id'])) {
+                echo $_GET['id'];
+}  ?>' src='<?php if (isset($_GET['s'])) {
+     echo $_GET['s'];
+}  ?>'  alt="Ghana made bags">
        </div>
 
 
@@ -165,7 +169,6 @@
     <!--javascript-->
 <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
     <script src="../js/scriptItems.js"></script>
 
  
