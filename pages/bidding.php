@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <?php include('../controller/items.php'); ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
-  <body style = "padding-top: 50px; padding-bottom: 150px;">
-
+  <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,7 +23,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style = "padding:0" href="home.html">
+        <a class="navbar-brand" style = "padding:0" href="home.php">
           <img src="../image/rsz_logo.png" alt="EasyBid Logo">
         </a>
       </div>
@@ -36,23 +36,22 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="items.html">Buy</a></li>
-          <li><a href="sellerUpload.html">Sell</a></li>
-          <li><a href="account.html">Account</a></li>
-          <li><a href="../index.html">Logout</a></li>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="items.php">Buy</a></li>
+          <li><a href="sellerUpload.php">Sell</a></li>
+          <li><a href="account.php">Account</a></li>
+          <li><a href="../index.php">Logout</a></li>
         </ul>
       </div>
     </div>
     </nav>
 
     <br><br>
-
     <div class = "container">
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Bid Begins In: </h2>
-          <pre>Days:     Hrs:     Mins:     Secs:    </pre>
+          <pre>Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
         </div>
       </div>
       <div class = "row">
@@ -65,9 +64,8 @@
 
         </div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-         <img id="active" class=<?php echo $_GET['id'];  ?> src=<?php echo $_GET['s'];  ?>  alt="Ghana made bags">
-       </div>
-
+          <img id="active">
+				</div>
 
 
         <div class="panel panel-default col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -75,64 +73,21 @@
             <div class = "row">
               <div class = "table-responsive">
                 <table class = "table table-striped">
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        Item Information
-                      </th>
-                    </tr>
+                  <thead id = "thea">
                   </thead>
-                  <tr>
-                    <td>
-                        Item Name:
-                    </td>
-                    
-                    <td id="item_n">
-                        Item 1
-                    </td>
-                  </tr>
-                  <tr>
-                    <td >
-                     Current Bid:
-                    </td>
-                    <td id="curr_bid">
-                      $100
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Minimum Bid:
-                    </td>
-                    <td id="min_bid">
-                      $50
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Seller Username:
-                    </td>
-                    <td id="seller">
-                      easybidder123
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Item condition
-                    </td>
-                    <td id="cond">
-                      New
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Status
-                    </td>
-                    <td id="status">
-                      Available
-                    </td>
-                  </tr>
+                  <tbody id ="tbod">
+                  </tbody>
                 </table>
               </div>
+            </div>
+            <div class = "row">
+              <h3>Item Description</h3>
+              <p id ="descrip">
+              </p>
+            </div>
+            <div class = "row">
+              <a href = "wonbid.php" class = "btn btn-primary">Place Bid</a>
+              <a href = "items.php" class = "btn btn-danger">Return</a>
             </div>
           </div>
         </div>
@@ -147,59 +102,7 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="1" class="img" src="../image/items/1.jpg">
-                <div class="caption">
-                  <h3>Ghanaian bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="2"  class="img" src="../image/items/2.jpg">
-                <div class="caption">
-                  <h3>Ghanaian T-SHIRT</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="3" class="img" src="../image/items/3.jpg">
-                <div class="caption">
-                  <h3>Ladies's beauty bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="4" class="img" src="../image/items/4.jpg">
-                <div class="caption">
-                  <h3>Ultimate perfume</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="5"  class="img" src="../image/items/5.jpg">
-                <div class="caption">
-                 <h3>EON FLAM Bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="6" class="img" src="../image/items/6.jpg">
-                <div class="caption">
-                  <h3>HP_560</h3>
-                </div>
-              </div>
-            </div>
+            <?php showitemsb($database);?>
           </div>
         </div>
       </div>
@@ -216,11 +119,7 @@
     <!--javascript-->
 <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script src="../js/bid_ajax.js"></script>
     <script src="../js/scriptItems.js"></script>
-
- 
-   <!--<script type="text/javascript" src="../js/script.js"></script>-->
-  
   </body>
 </html>

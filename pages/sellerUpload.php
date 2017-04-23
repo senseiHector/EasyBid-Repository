@@ -11,6 +11,7 @@
 		<link href="../css/fileinput.css" rel="stylesheet">
 	</head>
 	<body style = "padding-top: 50px; padding-bottom: 150px;">
+	     <?php require_once("../controller/selleruploadcontroller.php");?>
 		<!--Navbar and Header-->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
@@ -38,7 +39,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li ><a href="home.html">Home</a></li>
 						<li><a href="items.html">Buy</a></li>
-						<li class = "active"><a href="#">Sell</a></li>
+						<li class = "active"><a href="sellerUpload.php">Sell</a></li>
 						<li><a href="account.html">Account</a></li>
 						<li><a href="../index.html">Logout</a></li>
 					</ul>
@@ -53,32 +54,32 @@
 					<form method="post" action="" enctype="multipart/form-data">
 						<div class="form-group">
 					    <label for="iName">Item Name:</label>
-					    <input class="form-control" type="text" name="iName" id="iName">
+					    <input class="form-control" type="text" name="iName" id="iName" value="<?php if(!empty(isset($_POST["iName"]))) echo $_POST["iName"]?>">
 					  </div>
 						<div class="form-group">
 							<label for="file">To choose the image of the item to upload check below:</label>
-							<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-							<label for="file" class ="btn btn-block btn-primary"><span>Choose a File</span></label>
+							<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+							<label for="file" name="label" class ="btn btn-block btn-primary"><span>Choose a File</span></label>
 					  </div>
 						<div class="form-group">
 					    <label for="description">Add a description of the Item here:</label>
-					    <textarea name="description" id="description" rows="4" cols="50"></textarea>
+					    <textarea name="description" id="description" rows="4" cols="50" value="<?php if(!empty(isset($_POST["description"]))) echo $_POST["description"]?>"></textarea>
 					  </div>
 						<div class="form-group">
 					    <label for="conditions">Select the Item's Condition:</label>
-					    <select class="form-control" name="conditions" id="conditions">
+					    <select class="form-control" name="condition" id="conditions">
 								<option value="" disabled selected>Please Choose a Condition...</option>
-								<option value="1">New</option>
-								<option value="2">Slightly Used</option>
-								<option value="3">Collectors</option>
-							</select>
+								<option name="value" value="1"<?php if(isset($_POST["value"])&& $_POST["value"]=="1") echo ("selected");?>>New</option>
+								<option name="value" value="2"<?php if(isset($_POST["value"])&& $_POST["value"]=="2") echo ("selected");?>>Slightly Used</option>
+								<option name="value" value="3"<?php if(isset($_POST["value"])&& $_POST["value"]=="3") echo ("selected");?>>Collectors</option>
+						</select>
 					  </div>
 						<div class="form-group">
 					    <label for="basePrice">Input the Base Price:</label>
-					    <input class="form-control" type="text" name="basePrice" id="basePrice">
+					    <input class="form-control" type="text" name="basePrice" id="basePrice" value="<?php if(!empty(isset($_POST["basePrice"]))) echo $_POST["basePrice"]?>">
 					  </div>
 						<div class="form-group text-center">
-							<button type="submit" class="btn btn-primary">Upload Item</button>
+							<button type="submit" name="upload" class="btn btn-primary">Upload Item</button>
 						</div>
 					</form>
 				</div>
