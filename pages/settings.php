@@ -1,4 +1,6 @@
-<?php include("../unsecure/processunsecure.php"); ?>
+<?php include("../unsecure/processunsecure.php"); 
+include("../controller/settings_controller.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
