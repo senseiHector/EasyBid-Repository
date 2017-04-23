@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 20, 2017 at 06:01 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost
+-- Generation Time: Apr 21, 2017 at 03:25 PM
+-- Server version: 5.7.12
+-- PHP Version: 7.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `easybid`
+-- Database: `easyBid`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,8 @@ CREATE TABLE `items` (
   `auctioneer_id` int(11) DEFAULT NULL,
   `list_price` float DEFAULT NULL,
   `min_price` float DEFAULT NULL,
+  `bid_starts` datetime NOT NULL,
+  `bid_ends` datetime NOT NULL,
   `item_condition` enum('new','slightlyUsed','collectors') DEFAULT NULL,
   `status` enum('available','inTransit','delivered') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -109,6 +111,13 @@ CREATE TABLE `users` (
   `type` set('user','admin') DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `firstName`, `lastName`, `email`, `phoneNum`, `password`, `type`, `status`) VALUES
+(1, 'sensei', 'Hector', 'Amoah', 'hector@easybid.com', '244123456', '$2y$10$1kAub8.Cf7gMb1YbbiZIv.jhEUj0P1uxQwH9LHBaGENOMqA/vlPBO', 'user', 1);
 
 -- --------------------------------------------------------
 
@@ -199,7 +208,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user_payment_options`
 --

@@ -1,6 +1,6 @@
 <?php
   define("SERVERNAME","localhost");
   define("DBUSER","root");
-  define("DBPASSWORD","");
-  define("DATABASE","easyBid");
+  define("DBPASSWORD","blackair18");
+  define("DATABASE","easybid");
 ?>
