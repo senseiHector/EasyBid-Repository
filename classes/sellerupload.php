@@ -40,7 +40,6 @@
 	**/
 	function editselleritem($iname){
 	    //get form fields	
-
 		//write query to insert
 		$sql="UPDATE items WHERE iten_name='$iname'";
 
