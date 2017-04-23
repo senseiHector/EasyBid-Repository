@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,3 +32,32 @@
   </div>
 </div>
 </nav>
+=======
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Easy Bid</title>  
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<style type="text/css">
+	nav>ul{list-style-type: none;}
+	nav>ul>li{display: none;}
+</style>
+	<nav>
+	
+	<?php define("project","http://".$_SERVER["SERVER_NAME"]."/PUT PROJECT HERE") ?>
+
+
+	/*REMEMBER TO PICK PAGES OVER HERE FOR STANDARD USER*/
+		<li><a href= <?php echo project ?>/pages/manageusers.php> Manage Users </a></li>
+		<li><a href= <?php echo project ?>/pages/managemajors.php> Manage Majors </a></li>
+		<li><a href= <?php echo project ?>/login/logout.php> Logout </a></li>
+	</nav>
+</body>
+</html>
+>>>>>>> 31603683a123bd7d725f21369ae8b873607d28ed
