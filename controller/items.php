@@ -26,7 +26,7 @@ function showitems($database)
         if ($num==6) {
             echo "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-6'>
             <div class='thumbnail'>
-              <a href='bidding.php? s=".$r['icon_url']."' &id='".$r['item_id']."' > <img  src=".$r['icon_url']."> </a>
+              <a href='bidding.php? s={$r['icon_url']}&id={$r['item_id']}' > <img  src=".$r['icon_url']."> </a>
               <div class='caption'>
                 <h3>".$r['item_name']."</h3>
               </div>
@@ -35,7 +35,7 @@ function showitems($database)
         } else {
             echo "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-6'>
             <div class='thumbnail'>
-              <a href='bidding.php? s='".$r['icon_url']."' &id='".$r['item_id']."' > <img  src=".$r['icon_url']."> </a>
+              <a href='bidding.php? s={$r['icon_url']}&id={$r['item_id']}' > <img  src=".$r['icon_url']."> </a>
               <div class='caption'>
                 <h3>".$r['item_name']."</h3>
               </div>
@@ -58,7 +58,7 @@ function showitemsb($database)
         if ($num<7) {
             echo "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-6'>
             <div class='thumbnail'>
-              <a href='bidding.php? s=".$r['icon_url']."' &id='".$r['item_id']."' > <img id='".$r['item_id']."'  src='".$r['icon_url']."'> </a>
+             <a href='bidding.php' > <img class='img' id=".$r['item_id']." src=".$r['icon_url']."> </a>
               <div class='caption'>
                 <h3>".$r['item_name']."</h3>
               </div>
