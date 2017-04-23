@@ -3,6 +3,7 @@
   class DBConnection{
 
     private $connection;
+    public $dbresults;
 
     function connect(){
       $this->connection = mysqli_connect(SERVERNAME,DBUSER,DBPASSWORD,DATABASE);
@@ -11,6 +12,25 @@
       else
         return false;
     }
+
+        /* 
+  * Database fetch method
+  * @return true or false
+  */
+
+  public function fetch()
+  {
+    //check if results has content
+    if($this ->dbresults == false)
+    {
+      return false;
+    }
+
+    //return result
+    else
+      return mysqli_fetch_assoc($this ->dbresults);
+
+  }
 
     function query($sql){
       $result = mysqli_query($this->connection,$sql);
