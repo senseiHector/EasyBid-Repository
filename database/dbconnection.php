@@ -28,6 +28,24 @@
       }
     }
 
+    function prep($sql, $par_t, ...$par){
+      if(!$this->connect()){
+        return false;
+      }else{
+        $statement = $this->connection->prepare($sql);
+
+        $statement->bind_param($par_t,...$par);
+
+        if($statement->execute()){
+          return $statement;
+        }
+        else{
+          echo $this->error();
+          return false;
+        }
+      }
+    }
+
     function fetch(){
       if($this->dbresults)
         return mysqli_fetch_assoc($this->dbresults);
@@ -62,9 +80,15 @@
         return false;
     }
 
-    function close(){
-      if($this->connection)
-        mysqli_close($this->connection);
+    function close($statement = false){
+      if($this->connection){
+        if(!$statement)
+          mysqli_close($this->connection);
+        else{
+          $statement->close();
+          mysqli_close($this->connection);
+        }
+      }
       else
         return false;
     }

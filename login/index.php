@@ -17,15 +17,17 @@
 			  <div class="panel-body">
 					<h1 class = "text-center">Login</h1>
 					<img class="img-responsive" src="../image/Logo.png" alt="EasyBid Logo">
-					<form method="post" action="" onsubmit="return loginValidate(this)">
+					<form method="post" action="">
 						<!-- User enters username -->
 						<div class="form-group">
-					    <label for="username">Username</label>
-					    <input type="text" class="form-control" name="username" id="username" maxlength="20" placeholder="Username" required autofocus>
+					    <label for="username">Username<span style = "color:red">
+								<?php echo $username_err; ?></span></label>
+					    <input type="text" class="form-control" name="username" id="username" maxlength="20" placeholder="Username" autofocus>
 					  </div>
 						<!-- User enters password -->
 						<div class="form-group">
-					    <label for="passwd">Password</label>
+					    <label for="passwd">Password<span style = "color:red">
+								<?php echo $password_err; ?></span></label>
 					    <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password">
 					  </div>
 						<!-- Login Button -->
