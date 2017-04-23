@@ -7,9 +7,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT firstName FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
 
+echo $userDetails['firstName'];
+}
 }
 
 
@@ -21,8 +23,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT username FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
+
+echo $userDetails['username'];
+}
 
 }
 
@@ -33,9 +38,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT lastName FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
 
+echo $userDetails['lastName'];
+}
 }
 
 
@@ -47,8 +54,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT email FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
+
+echo $userDetails['email'];
+}
 
 }
 
@@ -60,8 +70,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT password FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
+
+echo $userDetails['password'];
+}
 
 }
 
@@ -73,8 +86,11 @@ $userDetails = new DBconnection;
 $sql= "SELECT phoneNum FROM users WHERE user_id = '$userID'";
 $userDetails->query($sql);
 
-$userDetails->fetch();
-echo $userDetails;
+while($userDetails->fetch())
+{
+
+echo $userDetails['phoneNum'];
+}
 
 }
 

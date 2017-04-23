@@ -13,7 +13,13 @@
   </head>
   <!--Body-->
   <body style = "padding-top: 50px; padding-bottom: 150px;">
+   <!--Include the ratings.php -->
+    <?php
+     require_once('../classes/ratings.php');
+    ?>
+
     <!--Navbar and Header-->
+
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,12 +37,6 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Home</a></li>
           <li><a href="items.html">Buy</a></li>
@@ -47,18 +47,24 @@
       </div>
     </div>
     </nav>
+
+    <?php include("../layout/standardheader.php"); ?>
+
     <br><br>
     <div class = "container">
   		<div class = "row">
   			<div class="panel panel-default col-md-6 col-md-offset-3">
+        <div style="color:red" class="text-center"><span><?php echo  $notice;?></span></div>
   			  <div class="panel-body">
+
             <h3 class = "text-center">Kindly Rate Your Seller's Performance</h3>
             <form method = "post" action = "">
               <div class = "row lead text-center">
                 Rating
                 <br>
                 <div id="stars" class="starrr"></div>
-                <span type = "number" id = "userstar" name = "userstar" hidden></span>
+                <span id = "userstar" name = "userstar" hidden></span>
+                <input type = "number" id = "userstarin" name = "userstarin" hidden/>
               </div>
               <br>
               <div class = "form-group">
@@ -71,7 +77,8 @@
                 Rating
                 <br>
                 <div id="stars-existing" class="starrr" data-rating='0'></div>
-                <span type = "number" id = "sitestar" name = "sitestar" hidden></span>
+                <span id = "sitestar" name = "sitestar" hidden></span>
+                 <input type = "number" id = "sitestarin" name = "sitestarin" hidden/>
               </div>
               <br>
               <div class = "form-group">
@@ -88,7 +95,6 @@
         </div>
       </div>
     </div>
-
   <!--Footer-->
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container">

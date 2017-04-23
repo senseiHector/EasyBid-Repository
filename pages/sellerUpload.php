@@ -46,6 +46,7 @@
 				</div>
 			</div>
 		</nav>
+		<?php include("../layout/standardheader.php"); ?>
 		<br><br>
 
 		<div class = "container">
