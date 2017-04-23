@@ -3,15 +3,19 @@
   class DBConnection{
 
 
-    private $connection;
+
+    public $connection;
     public $dbresults;
+
 
     function connect(){
       $this->connection = mysqli_connect(SERVERNAME,DBUSER,DBPASSWORD,DATABASE);
-      if($this->connection)
-        return true;
-      else
+      if(mysqli_connect_errno()){
         return false;
+      }
+      else{
+        return true;
+      }
     }
 
         /*
@@ -27,29 +31,32 @@
     }
     //return result
     else
-      return mysqli_fetch_assoc($this ->dbresults);
+      return mysqli_fetch_assoc($this->dbresults);
   }
 
     function query($sql){
-      if(!$this->connect()){
-        return false;
-      }else{
-        //Run the query
-        $this->dbresults = mysqli_query($this->connection,$sql);
-        //check if record returned
-        if($this->dbresults==false){
-          return false;
-        }else{
-          return true;
-        }
+
+		if(!$this->connect()){
+				return false;
+			}
+				//Run the query
+				$this->dbresults = mysqli_query($this->connection,$sql);
+				//check if record returned
+				if($this->dbresults==false){
+					//return !($this->dbresults==false)
+					return false;					
+				}else{
+					return true;					
+				}
       }
-    }
+
 
     function prep($sql, $par_t, ...$par){
       if(!$this->connect()){
         return false;
       }else{
         $statement = $this->connection->prepare($sql);
+
 
         $statement->bind_param($par_t,...$par);
 
@@ -64,32 +71,42 @@
     }
 
     function get_id(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_insert_id($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function num_rows(){
-      if($this->dbresults)
+      if($this->dbresults){
         return mysqli_num_rows($this->dbresults);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function affected_rows(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_affected_rows($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function error(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_error($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
+
+
 
     function close($statement = false){
       if($this->connection){
@@ -104,4 +121,5 @@
         return false;
     }
   }
+
 ?>
