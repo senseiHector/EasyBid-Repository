@@ -11,8 +11,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
-  <body onload = "loadItem(1)" style = "padding-top: 50px; padding-bottom: 150px;">
-
+  <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,12 +47,11 @@
     </nav>
 
     <br><br>
-
     <div class = "container">
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Bid Begins In: </h2>
-          <pre>Days:     Hrs:     Mins:     Secs:    </pre>
+          <pre>Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
         </div>
       </div>
       <div class = "row">

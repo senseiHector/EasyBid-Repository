@@ -58,6 +58,7 @@
                 Rating
                 <br>
                 <div id="stars" class="starrr"></div>
+                <span type = "number" id = "userstar" name = "userstar" hidden></span>
               </div>
               <br>
               <div class = "form-group">
@@ -69,7 +70,8 @@
               <div class = "row lead text-center">
                 Rating
                 <br>
-                <div id="stars" class="starrr"></div>
+                <div id="stars-existing" class="starrr" data-rating='0'></div>
+                <span type = "number" id = "sitestar" name = "sitestar" hidden></span>
               </div>
               <br>
               <div class = "form-group">
