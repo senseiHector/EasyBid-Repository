@@ -14,10 +14,10 @@
         return false;
     }
 
-        /*
+ /**
   * Database fetch method
   * @return true or false
-  */
+  **/
 
   public function fetch(){
     //check if results has content

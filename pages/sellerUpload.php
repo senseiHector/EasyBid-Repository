@@ -37,11 +37,11 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li ><a href="home.html">Home</a></li>
-						<li><a href="items.html">Buy</a></li>
+						<li ><a href="home.php">Home</a></li>
+						<li><a href="items.php">Buy</a></li>
 						<li class = "active"><a href="sellerUpload.php">Sell</a></li>
-						<li><a href="account.html">Account</a></li>
-						<li><a href="../index.html">Logout</a></li>
+						<li><a href="account.php">Account</a></li>
+						<li><a href="../index.php">Logout</a></li>
 					</ul>
 				</div>
 			</div>
