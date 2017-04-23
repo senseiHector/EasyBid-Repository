@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+<?php include('../controller/items.php');?>
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -245,6 +247,38 @@
                 </ul>
               </nav>
             </div>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+            <?php showitems($database);?>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-10">
+            <nav aria-label="Page navigation">0
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -256,12 +290,18 @@
         <p class="text-center" style = "color: #fff">Time is a-running</p>
       </div>
     </nav>
-
-
   <!--javascript-->
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/scriptItems.js"> </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
   </body>
+    <!--javascript-->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script src="../js/scriptItems.js"></script>
+</body>
+
 </html>

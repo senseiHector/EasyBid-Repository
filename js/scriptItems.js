@@ -53,11 +53,11 @@ $(document).ready(function () {
 
 			($('#active').attr({
 				'src': active,
-				'class': id,
+				'class': id
 			})).animate({
 				width: '100%'
 			}, 1000);
-
+			alert($('#active').attr('class'));
 			//using ajax to get the information of the item clicked					
 			$.post(
 				'../controller/bidding.php', {
@@ -72,7 +72,6 @@ $(document).ready(function () {
 					$('tr #min_bid').html(item['min_price'] + "GHS");
 					$('tr #cond').html(item['item_condition'] + "GHS");
 					$('tr #status').html(item['status']);
-
 				},
 				'json'
 			);

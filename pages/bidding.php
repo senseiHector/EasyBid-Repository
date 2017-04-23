@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <?php include('../controller/items.php'); ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,7 +65,7 @@
                 </div>
 
         </div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
          <img id="active" class=<?php echo $_GET['id'];  ?> src=<?php echo $_GET['s'];  ?>  alt="Ghana made bags">
        </div>
 
@@ -147,59 +148,7 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="1" class="img" src="../image/items/1.jpg">
-                <div class="caption">
-                  <h3>Ghanaian bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="2"  class="img" src="../image/items/2.jpg">
-                <div class="caption">
-                  <h3>Ghanaian T-SHIRT</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="3" class="img" src="../image/items/3.jpg">
-                <div class="caption">
-                  <h3>Ladies's beauty bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="4" class="img" src="../image/items/4.jpg">
-                <div class="caption">
-                  <h3>Ultimate perfume</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="5"  class="img" src="../image/items/5.jpg">
-                <div class="caption">
-                 <h3>EON FLAM Bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <img id ="6" class="img" src="../image/items/6.jpg">
-                <div class="caption">
-                  <h3>HP_560</h3>
-                </div>
-              </div>
-            </div>
+            <?php showitemsb($database);?>
           </div>
         </div>
       </div>
