@@ -51,9 +51,8 @@
 
 						<!-- Register Button -->
 						<div class="form-group text-center">
-							<button type="submit" name="register" class="btn btn-primary">Sign Up</button>
+							<button type="submit" name="changeDetails" class="btn btn-primary">Change Details</button>
 						</div>
-						<p class="text-center">Already Have An Account? <a href="../login/index.php">Login</a></p>
 					</form>
 			  </div>
 			</div>
