@@ -2,54 +2,54 @@
   require_once("dbcredentials.php");
   class DBConnection{
 
-<<<<<<< HEAD
+
     public $connection;
-    public $result;
-=======
-    private $connection;
-    private $dbresults;
->>>>>>> 4263edc20c0511ae2b244463287c4ea4008d64da
+    public $dbresults;
+
+
 
     function connect(){
       $this->connection = mysqli_connect(SERVERNAME,DBUSER,DBPASSWORD,DATABASE);
-      if($this->connection)
-        return true;
-      else
+      if(mysqli_connect_errno()){
         return false;
+      }
+      else{
+        return true;
+      }
     }
 
     function query($sql){
-<<<<<<< HEAD
+
 		if(!$this->connect()){
 				return false;
 			}
 				//Run the query
-				$this->result = mysqli_query($this->connection,$sql);
+				$this->dbresults = mysqli_query($this->connection,$sql);
 				//check if record returned
-				if($this->result==false){
+				if($this->dbresults==false){
 					//return !($this->dbresults==false)
 					return false;					
 				}else{
 					return true;					
 				}
-      //return $dbresult;
-=======
-      if(!$this->connect()){
-        return false;
-      }else{
-        //Run the query
-        $this->dbresults = mysqli_query($this->connection,$sql);
-        //check if record returned
-        if($this->dbresults==false){
-          return false;
-        }else{
-          return true;
-        }
->>>>>>> 4263edc20c0511ae2b244463287c4ea4008d64da
       }
-    }
+      //return $dbresult;
 
-<<<<<<< HEAD
+      // if(!$this->connect()){
+      //   return false;
+      // }else{
+      //   //Run the query
+      //   $this->dbresults = mysqli_query($this->connection,$sql);
+      //   //check if record returned
+      //   if($this->dbresults==false){
+      //     return false;
+      //   }else{
+      //     return true;
+      //   }
+      // }
+    
+
+
     // function get_id(){
     //   return mysqli_insert_id($this->connection);
     // }
@@ -71,55 +71,85 @@
     // }
 
     function fetch(){
-      if($this->result==false){
+      if($this->dbresult==false){
         return false;
       }
       else{
         return  mysqli_fetch_assoc($this->result);
       }
-     
-=======
-    function fetch(){
-      if($this->dbresults)
-        return mysqli_fetch_assoc($this->dbresults);
-      else
-        return false;
     }
+     
+
+    // function fetch(){
+    //   if($this->dbresults)
+    //     return mysqli_fetch_assoc($this->dbresults);
+    //   else
+    //     return false;
+    // }
     function get_id(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_insert_id($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function num_rows(){
-      if($this->dbresults)
+      if($this->dbresults){
         return mysqli_num_rows($this->dbresults);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function affected_rows(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_affected_rows($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function error(){
-      if($this->connection)
+      if($this->connection){
         return mysqli_error($this->connection);
-      else
+      }
+      else{
         return false;
+      }
     }
 
     function close(){
-      if($this->connection)
+      if($this->connection){
         mysqli_close($this->connection);
-      else
+      }
+      else{
         return false;
->>>>>>> 4263edc20c0511ae2b244463287c4ea4008d64da
+      }
+
     }
 
+
+    function preStatement($rate,$comment){
+      $connector = mysqli_connect(SERVERNAME,DBUSER,DBPASSWORD,DATABASE);
+      $statement = $connector->prepare("INSERT INTO ratings (rate,comments) VALUES (?,?)");
+      $statement->bind_param("ss", $rte, $com);
+
+      $rte = $rate;
+      $comm = $comment;
+      
+
+      $statement -> execute();
+      echo "Record created successfully";
+
+      $statement->close();
+      $connector->close();
+
+
+    }
   }
+
 ?>

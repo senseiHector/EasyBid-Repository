@@ -15,7 +15,7 @@
 
     <!--Include the ratings.php -->
     <?php
-    require_once(../unsecure/ratings.php);
+     require_once('../unsecure/ratings.php');
     ?>
 
     <!--Navbar and Header-->
@@ -55,7 +55,7 @@
     <br><br>
     <div class = "container">
       <h1>Kindly Rate Your Seller's Performance</h1>
-    <form method = "POST" action = "">
+    <form method = "post" action = "">
       Rating<br>
 
        <div class="rate">
