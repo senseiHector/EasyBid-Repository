@@ -4,7 +4,7 @@
 
 
     private $connection;
-    private $dbresults;
+    public $dbresults;
 
     function connect(){
       $this->connection = mysqli_connect(SERVERNAME,DBUSER,DBPASSWORD,DATABASE);
@@ -13,6 +13,22 @@
       else
         return false;
     }
+
+        /*
+  * Database fetch method
+  * @return true or false
+  */
+
+  public function fetch(){
+    //check if results has content
+    if($this ->dbresults == false)
+    {
+      return false;
+    }
+    //return result
+    else
+      return mysqli_fetch_assoc($this ->dbresults);
+  }
 
     function query($sql){
       if(!$this->connect()){
@@ -47,12 +63,6 @@
       }
     }
 
-    function fetch(){
-      if($this->dbresults)
-        return mysqli_fetch_assoc($this->dbresults);
-      else
-        return false;
-    }
     function get_id(){
       if($this->connection)
         return mysqli_insert_id($this->connection);

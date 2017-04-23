@@ -10,6 +10,7 @@
 
 	</head>
 	<body style = "padding-top: 50px; padding-bottom: 150px;">
+	 <?php require_once("../controller/paymentoptionscontroller.php");?>
 	   <!--The navigation bar of the links-->
 		 <nav class="navbar navbar-default navbar-fixed-top">
 		 <div class="container-fluid">

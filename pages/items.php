@@ -199,7 +199,7 @@
        <div class="panel-footer">
          <div class="row">
            <div class="col-sm-offset-1 col-sm-10">
-             <nav aria-label="Page navigation">0
+             <nav aria-label="Page navigation">
                <ul class="pagination">
                  <li>
                    <a href="#" aria-label="Previous">
