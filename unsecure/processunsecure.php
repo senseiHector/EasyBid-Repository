@@ -12,10 +12,7 @@
   elseif(isset($_POST['register'])){
     validRegistry();
   }
-  if(isset($_POST["upload"])){
-		insertnewselleritem();
-	}
-
+  
   function clean($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -105,29 +102,4 @@
     }
   }
 	
-	/**This function inserts the item from the seller into the database
-	*@return Boolean   Trueor False
-	*/
-	function insertnewselleritem(){
-	    //get form fields	
-		$itemname = $_REQUEST['iName'];
-		$description = $_REQUEST['description'];
-		$condition= $_REQUEST['condition'];
-		$basePrice=$_REQUEST['basePrice'];	
-
-		//write query to insert
-		$sql="INSERT into items (item_name,description,icon_url,list_price,min_price,item_condition,status) 
-		      VALUES ('$itemname','$description','link',0,'$basePrice','$condition','AVAILABLE')";
-
-		//create an instance of the database 
-		$insertitem = new DBconnection();
-		//Execute query
-		$result = $insertitem->query($sql);		
-		if($result){
-			 echo "Item uploaded";
-	    }else  
-	    {  
-	        echo "Item not uploaded";
-	    }
-	}
 ?>

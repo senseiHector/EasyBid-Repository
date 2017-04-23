@@ -20,12 +20,10 @@
 				$dbresults = mysqli_query($this->connection,$sql);
 				//check if record returned
 				if($dbresults==false){
-					//return !($this->dbresults==false)
 					return false;					
 				}else{
 					return true;					
 				}
-      //return $dbresult;
       }
 	}
 
