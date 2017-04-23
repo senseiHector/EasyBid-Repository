@@ -12,6 +12,12 @@
   </head>
 
   <body>
+
+    <!--Include the ratings.php -->
+    <?php
+    require_once(../unsecure/ratings.php);
+    ?>
+
     <!--Navbar and Header-->
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
