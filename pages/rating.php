@@ -53,7 +53,7 @@
   			<div class="panel panel-default col-md-6 col-md-offset-3">
   			  <div class="panel-body">
             <h3 class = "text-center">Kindly Rate Your Seller's Performance</h3>
-            <form method = "" action = "">
+            <form method = "post" action = "">
               <div class = "row lead text-center">
                 Rating
                 <br>
@@ -85,10 +85,7 @@
           </div>
         </div>
       </div>
-  </div>
-
-
-
+    </div>
 
   <!--Footer-->
   <nav class="navbar navbar-inverse navbar-fixed-bottom">

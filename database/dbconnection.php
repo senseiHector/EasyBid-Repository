@@ -2,6 +2,7 @@
   require_once("dbcredentials.php");
   class DBConnection{
 
+
     private $connection;
     private $dbresults;
 

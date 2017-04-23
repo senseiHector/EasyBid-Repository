@@ -1,3 +1,7 @@
+/**
+*@author Frances Antwi-Donkor
+**/
+
 var slide = 0;
 carousel();
 
@@ -15,4 +19,20 @@ function carousel(){
 
 	x[slide-1].style.display ="block";
 	setTimeout(carousel,5000);
+}
+
+
+function displayBid(){
+	var bidamount = document.forms["Bidding"]["amount"].value;
+	if(bidamount == ""){
+		alert("Please place bid");
+		return false;
+	}
+	else{
+		alert("You placed a bid of " + bidamount + "." );
+	}
+}
+
+function tryid(){
+	alert("hey");
 }

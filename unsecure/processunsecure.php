@@ -1,5 +1,4 @@
 <?php
-
   require_once("../database/dbconnection.php");
   $email = $username = $password = $firstname = $lastname = $phone =
   $email_err = $email_error = $username_err = $username_error = $password_error =
@@ -14,10 +13,14 @@
     validRegistry();
 
   if(isset($_POST["upload"]))
-		insertnewselleritem();
+    insertnewselleritem();
 
   if(isset($_GET['checkU']))
     checkUsername($_GET['checkU']);
+
+  if(isset($_POST['submit'])){
+    searchDatabase();
+  }
 
   function clean($data) {
     $data = trim($data);
@@ -34,6 +37,7 @@
       $GLOBALS['username_err'] = " *required";
       $valid = false;
     }
+
     $GLOBALS['password'] = isset($_POST['passwd'])? $_POST['passwd']:"";
     if(empty($GLOBALS['password'])){
       $GLOBALS['password_err'] = " *required";
@@ -47,7 +51,7 @@
 
   function loginUser(){
     require_once("../database/dbconnection.php");
-    $permission = 0;
+    $type = "";
 
     $connection = new DBConnection;
     $sql = "SELECT * FROM users WHERE username = \"".$GLOBALS['username']."\" AND status = 1";
@@ -62,26 +66,24 @@
           $_SESSION['type'] = $row['type'];
           $_SESSION['user_id'] = $row['user_id'];
           $type = $row['type'];
-          if($type == "user")
+          if($type == "admin")
             header('Location: ../pages/home.php');
           else
             header('Location: ../pages/home.php');
         }
         else
-          $GLOBALS['login_notice']="</br>Wrong Password";
+          $GLOBALS['login_notice']="Wrong Password";
       }
       else
-        $GLOBALS['login_notice']="User Does Not Exist</br>";
+        $GLOBALS['login_notice']="User Does Not Exist";
 
       $connection->close();
     } else {
-      echo "Error: " . $sql . "<br>" . $connection->error();
+      $GLOBALS['login_notice']= "Error: " . $sql . "<br>" . $connection->error();
     }
   }
 
   function validRegistry(){
-    $valid = true;
-
     $GLOBALS['firstname'] = isset($_POST['fname'])? clean($_POST['fname']):"";
     if(empty($GLOBALS['firstname'])){
       $GLOBALS['firstname_err'] = " *required";
@@ -143,7 +145,6 @@
       if(!$emailPattern)
         $GLOBALS['email_error'] = "Email is Invalid";
     }
-
     $GLOBALS['phone'] = isset($_POST['phone'])? clean($_POST['phone']):"";
     if(empty($GLOBALS['phone'])){
       $GLOBALS['phone_err'] = " *required";
@@ -183,9 +184,9 @@
         header("location: ../login/index.php");
       }
       else
-        $register_notice = "Could not Register User at this Time";
+        $GLOBALS['register_notice'] = "Could not Register User at this Time";
     } else {
-      $register_notice = "Error: " .$sql."<br>".$connection->error();
+      $GLOBALS['register_notice'] = "Error: " .$sql."<br>".$connection->error();
     }
     $connection->close($result);
   }
@@ -200,6 +201,27 @@
     else
       echo "0";
     $connection->close();
+  }
+
+function searchDatabase(){
+    /**
+    * Searching database for items with same name
+    **/
+
+    $search = $_REQUEST['search'];
+
+    $statement = "SELECT * FROM items WHERE item_name = '$search' ";
+    $connect = new connect;
+    $result = $connect-> query($statement);
+    //fetch the array
+    if($results){
+      while($row = $connect -> fetch()){
+        echo "Item found";
+      }
+    }
+    else{
+      echo "no such items exit";
+    }
   }
 
 	/**This function inserts the item from the seller into the database
