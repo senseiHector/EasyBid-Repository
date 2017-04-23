@@ -6,16 +6,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Ea$yBid | Login</title>
+	<title>Ea$yBid | Forgot Password</title>
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
+<?php
+	require_once("../unsecure/processunsecure.php");
+?>
+
+
 <body style = "padding-top: 50px; padding-bottom: 150px;">
 	<div class = "container">
 		<div class = "row">
 			<div class="panel panel-default col-md-4 col-md-offset-4">
 			  <div class="panel-body">
-					<h1 class = "text-center">Login</h1>
+					<h1 class = "text-center">Renew Password</h1>
 					<img class="img-responsive" src="../image/Logo.png" alt="EasyBid Logo">
 					<form method="post" action="">
 						<span style = "color:red"><?php echo $login_notice; ?></span>
@@ -28,20 +33,22 @@
 					  </div>
 						<!-- User enters password -->
 						<div class="form-group">
-					    <label for="passwd">Password<span style = "color:red">
+					    <label for="passwd">New Password<span style = "color:red">
 								<?php echo $password_err; ?></span></label>
-					    <input type="password" class="form-control" name="passwd" id="passwd"
+					    <input type="password" class="form-control" name="newpasswd" id="passwd"
+							value="<?php echo $password; ?>" placeholder="Password">
+							 <label for="passwd">Confirm Password<span style = "color:red">
+								<?php echo $password_err; ?></span></label>
+					    <input type="password" class="form-control" name="confirmpass" id="passwd"
 							value="<?php echo $password; ?>" placeholder="Password">
 					  </div>
 						<!-- Login Button -->
 						<div class="form-group text-center">
-							<button type="submit" name="login" class="btn btn-primary">Login</button>
+							<button type="submit" name="passchange" class="btn btn-primary">Proceed</button>
 						</div>
 						</br>
 						<p class="text-center">Don't Have An Account? <a href="../register/index.php">Sign Up</a></p>
-						<div>
-						<p class="text-center"><a href="forgotpass.php">Forgot password</a></p>
-						</div>
+						
 					</form>
 			  </div>
 			</div>
