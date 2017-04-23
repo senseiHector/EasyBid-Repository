@@ -15,7 +15,7 @@
 		<div class = "row">
 			<div class="panel panel-default col-md-4 col-md-offset-4">
 			  <div class="panel-body">
-					<h1 class = "text-center">Sign Up</h1>
+					<h1 class = "text-center">Change User Details</h1>
 					<img class="img-responsive" src="../image/Logo.png" alt="EasyBid Logo">
 					<form method="post" action="" onsubmit="return registryValidate(this)">
 						<!-- Field for first name -->
