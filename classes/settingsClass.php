@@ -44,7 +44,7 @@ class modifyDetails extends DBconnection
 		$this->query($sql);
 		while ($email = $this->fetch())
 		{
-			return $email['phoneNum'];
+			return $email['phone'];
 		}
 	}
 
@@ -52,7 +52,7 @@ class modifyDetails extends DBconnection
 	public function updateDetails($fname,$lastname,$username,$password,$phoneNum)
 	{
 		$this->connection();
-		$sql = "UPDATE usertable SET first_name=$firstname";
+		$sql = "UPDATE usertable SET firstName=$fname,lastName=$lastname,username=$username,password=$password,phoneNum=$phoneNum";
 		$this->query($sql);
 		while ($email = $this->fetch())
 		{

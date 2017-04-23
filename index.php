@@ -41,7 +41,6 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="pages/items.php"> Buy</a></li>
           <li><a href="register/index.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="login/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
