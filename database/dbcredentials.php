@@ -4,7 +4,5 @@
   define("DBPASSWORD","");
   define("DATABASE","easybid");
 
-  // define("DBPASSWORD","blackair18");
-  // define("DATABASE","easyBid");
-
+  
 ?>

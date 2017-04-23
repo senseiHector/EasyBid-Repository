@@ -11,7 +11,7 @@
 		<link href="../css/fileinput.css" rel="stylesheet">
 	</head>
 	<body style = "padding-top: 50px; padding-bottom: 150px;">
-	     <?php require_once("../unsecure/processunsecure.php");?>
+	     <?php require_once("../controller/selleruploadcontroller.php");?>
 		<!--Navbar and Header-->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">

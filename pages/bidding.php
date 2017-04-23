@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <?php include('../controller/items.php'); ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
-  <body onload = "loadItem(1)" style = "padding-top: 50px; padding-bottom: 150px;">
-
+  <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,12 +47,11 @@
     </nav>
 
     <br><br>
-
     <div class = "container">
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Bid Begins In: </h2>
-          <pre>Days:     Hrs:     Mins:     Secs:    </pre>
+          <pre>Days: 0    Hrs: 0    Mins: 0    Secs: 0    </pre>
         </div>
       </div>
       <div class = "row">
@@ -103,59 +102,7 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/1a.jpg"></a>
-                <div class="caption">
-                  <h3>Ghanaian bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/1b.jpg"></a>
-                <div class="caption">
-                  <h3>Ghanaian T-SHIRT</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/2.jpg"></a>
-                <div class="caption">
-                  <h3>Ladies's beauty bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/3.jpg"></a>
-                <div class="caption">
-                  <h3>Ultimate perfume</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/4.jpg"></a>
-                <div class="caption">
-                 <h3>EON FLAM Bag</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-              <div class="thumbnail">
-                <a href= "paymentOptions.php"><img class="img" src="../image/items/5.jpg"></a>
-                <div class="caption">
-                  <h3>HP_560</h3>
-                </div>
-              </div>
-            </div>
+            <?php showitemsb($database);?>
           </div>
         </div>
       </div>
