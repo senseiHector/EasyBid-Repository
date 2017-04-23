@@ -17,12 +17,14 @@
   *@param userid
   *@param paymentOption
   **/
-  public function insertnewpaymentOption($optionName){
+  public function insertnewpaymentOption(){
+	  /*$optionname=$_REQUEST[''];
+	  $subscriber=$_REQUEST[''];*/
 	  //The sql
-	  $sql="INSERT into payment_options values('$optionName')";
+	  /*$sql="INSERT into payment_options values('$optionName')";
 	  
 	  //write the query
-	  $this->query($sql);
+	  $this->query($sql);*/
 	  
   }
  /**
