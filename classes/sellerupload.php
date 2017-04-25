@@ -51,7 +51,7 @@
 			 echo "Item editted";
 	    }else  
 	    {  
-	        echo "Item edit not succssful";
+	        echo "Item edit not successful";
 	    }
 	}
   }
