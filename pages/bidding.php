@@ -12,7 +12,7 @@
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
   <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
-    <?php include("../layout/standardheader.php"); session_start();?>
+    <?php include("../layout/standardheader.php"); session_start(); $_SESSION['item_id']= $_GET['id'];?>
     <br><br>
     <div class = "container">
       <div class="panel panel-default">

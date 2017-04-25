@@ -4,5 +4,5 @@
   define("DBPASSWORD","");
   define("DATABASE","easybid");
 
-  
+
 ?>
