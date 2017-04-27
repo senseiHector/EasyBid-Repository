@@ -1,9 +1,10 @@
-function loadItem(item_id){
+var won = false;
+function loadItem(item_id,user_id){
   var x = new XMLHttpRequest();
   x.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       var this_item = JSON.parse(this.responseText);
-      var counter = setInterval(function(){ countdown(this_item.item_bid_starts,this_item.item_bid_ends) }, 1000);
+      var counter = setInterval(function(){ countdown(this_item,this_item.item_bid_starts,this_item.item_bid_ends) }, 1000);
         document.getElementById("thea").innerHTML = "<tr><th colspan=\"2\">"
         +this_item.item_name+"</th></tr>";
 
@@ -41,34 +42,73 @@ function loadItem(item_id){
   }
   x.open("GET","../controller/bid_controller.php?load="+item_id, true);
   x.send();
-}
 
-function countdown(start_time,end_time){
-  var date = new Date();
-  var end_date = new Date(end_time * 1000);
-  var start_date = new Date(start_time * 1000);
-  var diff = start_date.getTime() - date.getTime();
-  var d_t = new Date(diff);
+  function countdown(this_item,start_time,end_time){
+    var date = new Date();
+    var end_date = new Date(end_time * 1000);
+    var start_date = new Date(start_time * 1000);
+    var diff = start_date.getTime() - date.getTime();
+    var d_t = new Date(diff);
 
-  if(diff >= 0){
-    document.getElementById("start_end").innerHTML = "Bid Starts In: ";
-    document.getElementById("countdown_pre").innerHTML = "Hrs: "+d_t.getHours()+
-    "    Mins: "+d_t.getMinutes()+"    Secs: "+d_t.getSeconds()+" ";
-    document.getElementById("bid_btn").disabled = true;
+    if(diff >= 0){
+      document.getElementById("start_end").innerHTML = "Bid Starts In: ";
+      document.getElementById("countdown_pre").innerHTML = "Hrs: "+d_t.getHours()+
+      "    Mins: "+d_t.getMinutes()+"    Secs: "+d_t.getSeconds()+" ";
+      document.getElementById("bid_btn").disabled = true;
+    }
+    else {
+      var over = end_date.getTime() - date.getTime();
+      if(over > 0){
+        document.getElementById("start_end").innerHTML = "Bid Ends In: ";
+        var diff_end = end_date.getTime() - date.getTime();
+        var timeDiff_end = Math.abs(diff_end);
+        var d_t_e = new Date(diff_end);
+        document.getElementById("countdown_pre").innerHTML = "Hrs: "+d_t_e.getHours()+
+        "    Mins: "+d_t_e.getMinutes()+"    Secs: "+d_t_e.getSeconds()+" ";
+        if(this_item.auctioneer_id==user_id)
+          document.getElementById("bid_btn").disabled = true;
+        else
+        document.getElementById("bid_btn").disabled = false;
+      }
+      else{
+        document.getElementById("start_end").innerHTML = "Bid Has Ended ";
+        document.getElementById("countdown_pre").innerHTML = "Hrs: 0    Mins: 0    Secs: 0 ";
+        document.getElementById("current_highest").innerHTML = "Winning Bid: GHC "+ this_item.item_highest_bid;
+
+        getWinner(item_id,this_item.item_bidder);
+        document.getElementById('bid_s').hidden=true;
+        document.getElementById('winner').innerHTML="";
+        if(won){
+          document.getElementById('winner').style.color="green";
+          document.getElementById('winner').innerHTML="Congratulations! You won this Bid!";
+          document.getElementById('won_s').hidden=false;
+        }
+        else{
+          
+        }
+      }
+    }
   }
-  else {
-    var over = end_date.getTime() - date.getTime();
-    if(over > 0){
-      document.getElementById("start_end").innerHTML = "Bid Ends In: ";
-      var diff_end = end_date.getTime() - date.getTime();
-      var timeDiff_end = Math.abs(diff_end);
-      var d_t_e = new Date(diff_end);
-      document.getElementById("countdown_pre").innerHTML = "Hrs: "+d_t_e.getHours()+
-      "    Mins: "+d_t_e.getMinutes()+"    Secs: "+d_t_e.getSeconds()+" ";
+
+
+  function getWinner(item_id, user_id){
+    var x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        var winner_id = this.responseText;
+        if(winner_id == user_id)
+          won = true;
+        else
+          won = false;
+      }
+      else if(this.status == 403){
+        document.write("Error 403. Forbidden!");
+      }
+      else if(this.status == 404){
+        document.write("Error 404. Not Found!");
+      }
     }
-    else{
-      document.getElementById("start_end").innerHTML = "Bid Has Ended ";
-      document.getElementById("countdown_pre").innerHTML = "Hrs: 0    Mins: 0    Secs: 0 ";
-    }
+    x.open("GET","../controller/bid_controller.php?winner="+item_id, true);
+    x.send();
   }
 }

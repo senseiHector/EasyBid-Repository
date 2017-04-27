@@ -25,7 +25,7 @@
 						    <label for="fname">First Name<span style = "color:red">
 									<?php echo $firstname_err; ?></span></label>
 						    <input type="text" class="form-control" name="fname" id="fname"
-								placeholder="First Name"  autofocus>
+								placeholder="First Name" value="<?php echo $firstname; ?>" autofocus>
 								<span style = "color:red"><?php echo $firstname_error; ?></span>
 						  </div>
 							<!-- Field for last name -->
@@ -33,7 +33,7 @@
 								<label for="lname">Last Name<span style = "color:red">
 									<?php echo $lastname_err; ?></span></label>
 								<input type="text" class="form-control" name="lname" id="lname"
-								placeholder="Last Name"  autofocus>
+								placeholder="Last Name" value="<?php echo $lastname; ?>" autofocus>
 								<span style = "color:red"><?php echo $lastname_error; ?></span>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
 							<label for="email">Email<span style = "color:red">
 								<?php echo $email_err; ?></span></label>
 							<input type="email" class="form-control" name="email" id="email"
-							placeholder="Email"  autofocus>
+							placeholder="Email" value="<?php echo $email; ?>" autofocus>
 							<span style = "color:red"><?php echo $email_error; ?></span>
 						</div>
 						<!-- Field for username -->
@@ -50,7 +50,7 @@
 					    <label for="username">Username<span style = "color:red">
 								<?php echo $username_err; ?></span></label>
 					    <input type="text" class="form-control" name="username" id="username"
-							maxlength="20" placeholder="Username" onchange="checkUsername()" autofocus>
+							maxlength="20" placeholder="Username" value="<?php echo $username; ?>" onchange="checkUsername()" autofocus>
 							<span id = "checkUsername"></span>
 							<span style = "color:red"><?php echo $username_error; ?></span>
 							<input type="text" name="userStat" hidden id="userStat">
@@ -60,7 +60,7 @@
 					    <label for="passwd">Password<span style = "color:red">
 								<?php echo $password_err; ?></span></label>
 					    <input type="password" class="form-control" name="passwd" id="passwd"
-							placeholder="Password">
+							value="<?php echo $password; ?>" placeholder="Password">
 							<span style = "color:red"><?php echo $password_error; ?></span>
 					  </div>
 						<!-- Field for phone number -->
@@ -68,7 +68,7 @@
 					    <label for="phone">Phone Number<span style = "color:red">
 								<?php echo $phone_err; ?></span></label>
 					    <input type="text" class="form-control" name="phone" id="phone"
-							placeholder="Phone Number">
+							value="<?php echo $phone; ?>" placeholder="Phone Number">
 							<span style = "color:red"><?php echo $phone_error; ?></span>
 					  </div>
 

@@ -5,4 +5,8 @@
   if(isset($_GET['load'])){
     $items->loadItems();
   }
+  if(isset($_GET['search'])){
+    $items->searchItems($_GET['search']);
+  }
+
 ?>

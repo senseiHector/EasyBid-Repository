@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <?php include('../controller/items.php'); ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +10,9 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/styleItems.css"/>
   </head>
-  <body onload = "loadItem(<?php echo $_GET['id']; ?>)" style = "padding-top: 50px; padding-bottom: 150px;">
-    <?php include("../layout/standardheader.php"); session_start(); $_SESSION['item_id']= $_GET['id'];?>
+  <?php include("../settings/core_ini.php"); ?>
+  <body onload = "loadItem(<?php echo $_GET['id'] .",".$_SESSION['user_id'];?>)" style = "padding-top: 50px; padding-bottom: 150px;">
+    <?php isLoggedIn(); $_SESSION['item_id']= $_GET['id'];?>
     <br><br>
     <div class = "container">
       <div class="panel panel-default">
@@ -40,6 +40,7 @@
               </div>
               <div>
                 <h2 class="text-center" id="current_highest"></h2>
+                <h3 class="text-center" id ="winner"></h3>
               </div>
             </div>
             <div class = "row">
@@ -48,7 +49,8 @@
               </p>
             </div>
             <div class = "row">
-              <button type="button" id="bid_btn" class="btn btn-primary" data-toggle="modal" data-target="#bid_modal"/>Place Bid</button>
+              <span id="bid_s"><button type="button" id="bid_btn" class="btn btn-primary" data-toggle="modal" data-target="#bid_modal"/>Place Bid</button></span>
+              <span id="won_s" hidden="true"><a href = "paymentOptions.php" id="pay_ship" class = "btn btn-success">Payment/Shipping</a></span>
               <a href = "items.php" class = "btn btn-danger">Return</a>
             </div>
           </div>

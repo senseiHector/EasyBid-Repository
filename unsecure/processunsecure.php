@@ -18,10 +18,9 @@
   if(isset($_GET['checkU']))
     checkUsername($_GET['checkU']);
 
-  if(isset($_POST['submit'])){
-    searchDatabase();
+  if(isset($_POST['passchange'])){
+    forgotpass();
   }
-
   function clean($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -65,6 +64,7 @@
           $_SESSION['lastname'] = $row['lastName'];
           $_SESSION['type'] = $row['type'];
           $_SESSION['user_id'] = $row['user_id'];
+          $_SESSION['username'] = $row['username'];
           $type = $row['type'];
           if($type == "admin")
             header('Location: ../pages/home.php');
@@ -84,6 +84,7 @@
   }
 
   function validRegistry(){
+    $valid=true;
     $GLOBALS['firstname'] = isset($_POST['fname'])? clean($_POST['fname']):"";
     if(empty($GLOBALS['firstname'])){
       $GLOBALS['firstname_err'] = " *required";
@@ -203,27 +204,6 @@
     $connection->close();
   }
 
-function searchDatabase(){
-    /**
-    * Searching database for items with same name
-    **/
-
-    $search = $_REQUEST['search'];
-
-    $statement = "SELECT * FROM items WHERE item_name = '$search' ";
-    $connect = new connect;
-    $result = $connect-> query($statement);
-    //fetch the array
-    if($results){
-      while($row = $connect -> fetch()){
-        echo "Item found";
-      }
-    }
-    else{
-      echo "no such items exit";
-    }
-  }
-
 	/**This function inserts the item from the seller into the database
 	*@return Boolean   Trueor False
 	*/
@@ -249,4 +229,35 @@ function searchDatabase(){
 	        echo "Item not uploaded";
 	    }
 	}
+  function forgotpass(){
+    //attaining the respective variables
+    $uname = $_REQUEST['username'];
+    $npass = $_REQUEST['newpasswd'];
+    $conpass = $_REQUEST['confirmpass'];
+    //confirm the two passwords match and hash the new password
+    if($npass === $conpass){
+       $hashpass = password_hash($npass,PASSWORD_DEFAULT);
+        //the sql statement to update the database
+     $statement = "UPDATE users SET password = '$hashpass' WHERE username = '$uname'";
+    //connecting to the database
+    $connector = new dbconnection;
+
+    //execute the query
+    $rlt = $connector-> query($statement);
+    if($rlt > 0){
+      echo "<script>
+      alert('Your password has been successfully updated');
+      window.location.href= '../login/index.php';
+      </script>";
+      //header("Location: ../login/index.php");
+    }
+    else{
+      echo "Password could not be updated";
+    }
+    }
+    else{
+      echo "Your password does not match";
+    }
+
+  }
 ?>

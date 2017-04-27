@@ -8,5 +8,8 @@
   if(isset($_POST['bid_mod'])){
     $bids->placeBid($_POST['your_bid'],$_POST['item_id'],$_POST['bidder_id']);
   }
+  if(isset($_GET['winner'])){
+    $bids->getWinner($_GET['winner']);
+  }
 
 ?>

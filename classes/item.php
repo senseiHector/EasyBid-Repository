@@ -27,6 +27,25 @@
         return false;
       }
     }
+
+
+    function searchItems($search){
+      $sql = "SELECT * FROM items WHERE item_name LIKE '%$search%'";
+      $list = array();
+      if($this->query($sql)){
+
+        foreach($this->dbresults as $it){
+          $this_list = new item($it['item_id'],$it['item_name'],
+          $it['icon_url']);
+          array_push($list, $this_list);
+        }
+        echo json_encode($list);
+        return $list;
+      }
+      else{
+        return false;
+      }
+    }
   }
 
   class item{

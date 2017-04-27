@@ -11,14 +11,23 @@
    <link type="text/css" rel="stylesheet" href="../css/styleItems.css" />
    <link href="../css/bootstrap.min.css" rel="stylesheet">
  </head>
-
+<?php include("../settings/core_ini.php");?>
  <body onload="loadItems()" style="padding-top: 50px; padding-bottom: 100px;">
 
-   <?php include("../layout/standardheader.php"); ?>
-   <br><br>
-
+   <?php isLoggedIn();?>
+<br>
+   <div class = "container">
+     <form>
+        <div class="input-group">
+          <input type="text" id="search_in" name="search_in" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" name="search" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+     </form>
+    </div>
+<br>
    <div class="container">
-
      <div class="panel panel-info">
        <div class="panel-heading">
          <div class="row">

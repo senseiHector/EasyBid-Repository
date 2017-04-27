@@ -1,8 +1,8 @@
 <?php
-  define("SERVERNAME","localhost");
-  define("DBUSER","root");
-  define("DBPASSWORD","");
-  define("DATABASE","easybid");
+  define("SERVERNAME","35.166.18.143");
+  define("DBUSER","hector.amoah");
+  define("DBPASSWORD","hector.amoah");
+  define("DATABASE","easyBid");
 
 
 ?>

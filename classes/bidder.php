@@ -3,7 +3,7 @@
   *@author Hector Amoah
   *@version 1.0
   **/
-
+  session_start();
   require_once("../database/dbconnection.php");
 
   class Bidder extends DBConnection{
@@ -33,7 +33,7 @@
 
         $this_item = new bid_item($item['item_id'],$item['item_name'],
         $item['description'],$item['icon_url'],$name_['username'],
-        $bid,$item['min_price'],strtotime($item['bid_starts']),
+        $_SESSION['user_id'], $bid,$item['min_price'],strtotime($item['bid_starts']),
         $item['bid_starts'],strtotime($item['bid_ends']),$item['bid_ends'],
         $condition,$item['status']);
 
@@ -57,6 +57,20 @@
       }
       $this->close($result);
     }
+
+    function getWinner($item_id){
+      $sql = "SELECT bidder_id FROM bids WHERE item_id = $item_id ORDER BY bid_amount DESC LIMIT 1";
+
+      if($this->query($sql)){
+        $item = $this->fetch();
+
+        echo $item['bidder_id'];
+        return $item;
+      }
+      else{
+        echo $this->error();
+      }
+    }
   }
 
   class bid_item{
@@ -65,6 +79,7 @@
     public $item_description;
     public $item_icon_url;
     public $item_auctioneer;
+    public $item_bidder;
     public $item_highest_bid;
     public $item_min_price;
     public $item_bid_starts;
@@ -75,13 +90,14 @@
     public $item_status;
 
     function __construct($item_id,$item_name,$item_description,$item_icon_url,
-    $item_auctioneer,$item_highest_bid,$item_min_price,$item_bid_starts,$item_start_time,
+    $item_auctioneer,$item_bidder,$item_highest_bid,$item_min_price,$item_bid_starts,$item_start_time,
     $item_bid_ends,$item_end_time,$item_condition,$item_status){
       $this->item_id = $item_id;
       $this->item_name = $item_name;
       $this->item_description = $item_description;
       $this->item_icon_url = $item_icon_url;
       $this->item_auctioneer = $item_auctioneer;
+      $this->item_bidder = $item_bidder;
       $this->item_highest_bid = $item_highest_bid;
       $this->item_min_price = $item_min_price;
       $this->item_bid_starts = $item_bid_starts;
@@ -91,6 +107,5 @@
       $this->item_condition = $item_condition;
       $this->item_status = $item_status;
     }
-
   }
   ?>

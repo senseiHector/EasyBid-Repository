@@ -12,9 +12,10 @@
 
   </head>
   <!--Body-->
-  <body onload="loadUser(<?php session_start();echo $_SESSION['user_id'];?>)" style = "padding-top: 60px; padding-bottom: 150px;">
+  <?php include("../settings/core_ini.php"); ?>
+  <body onload="loadUser(<?php echo $_SESSION['user_id'];?>)" style = "padding-top: 60px; padding-bottom: 150px;">
     <!--Navbar and Header-->
-    <?php include("../layout/standardheader.php"); ?>
+    <?php isLoggedIn(); ?>
 
     <!--Main Content-->
     <div class="container">
@@ -40,81 +41,13 @@
           </div>
         </div>
         <div class="panel panel-info col-md-offset-1 col-md-7">
-          <div class="panel-body">
-            <h3 class = "text-center">Current Bids</h3>
-            <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/1a.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 1</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/1b.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 2</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/2.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 3</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Place Bid</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <h3 class = "text-center">Current Bids</h3>
+          <div class="panel-body" id="cur_bids">
           </div>
         </div>
         <div class="panel panel-info col-md-offset-1 col-md-7">
-          <div class="panel-body">
-            <h3 class = "text-center">Current Auctions</h3>
-            <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/1a.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 1</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Monitor Bids</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/1b.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 2</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Monitor Bids</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-4 col-xs-6">
-                <div class="thumbnail">
-                  <a href= "paymentOptions.html"><img class="img" src="../image/items/2.jpg"></a>
-                  <div class="caption">
-                    <h3>Item 3</h3>
-                    <p>Item Description</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Monitor Bids</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <h3 class = "text-center">Current Auctions</h3>
+          <div class="panel-body" id="cur_aucs">
           </div>
         </div>
       </div>

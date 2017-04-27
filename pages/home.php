@@ -12,9 +12,10 @@
 
   </head>
   <!--Body-->
+  <?php include("../settings/core_ini.php"); ?>
   <body style = "padding-top: 50px; padding-bottom: 150px;">
     <!--Navbar and Header-->
-    <?php include("../layout/standardheader.php"); ?>
+    <?php isLoggedIn(); ?>
     <!--Content Slider-->
     <div class="foo">
       <a href="#"><img class="slide" width="100%" height="20%" src="../image/marilyn Monroe.jpg"></a>
